@@ -42,10 +42,7 @@ public abstract class FireableObject : MonoBehaviour
         CoolDownTemperature();
     }
 
-    virtual public void TakeDamage(float damage)
-    {
-        
-    }
+    abstract public void TakeDamage(float damage);
 
     public void CoolDownTemperature()
     {
@@ -95,9 +92,16 @@ public abstract class FireableObject : MonoBehaviour
         }
     }
 
+    public void IgniteObject()
+    {
+        _temperature = igniteTreshold;
+        isOnFire = true;
+    }
+
     public void PutDownFire()
     {
         isOnFire = false;
+        _temperature = 0;
     }
 
     void Update() {

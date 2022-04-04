@@ -16,8 +16,8 @@ public class GetResource_GoToAResource : StateBase
     public override void UpdateState()
     {
         base.UpdateState();
-        // If no resource was found (or found resource was destroyed)
-        if(Manager.TargetResource == null)
+        // If no resource was found (or found resource is depleted or destroyed)
+        if(Manager.TargetResource == null || Manager.TargetResource?.gameObject.activeInHierarchy == false)
         {
             // Find closest resource
             DepletableResource[] freeResources = Manager.GetValidResources();     

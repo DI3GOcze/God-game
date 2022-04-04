@@ -1020,7 +1020,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 3.5
+  m_Speed: 10
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -1365,7 +1365,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c832d0123f6e56d45aa91d12b3ff49c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _reachedDestination: 0
+  ReachedDestination: 0
   hungerBar: {fileID: 2756879129667790722}
   maxHunger: 100
   HungerIncreasePerSecond: 1

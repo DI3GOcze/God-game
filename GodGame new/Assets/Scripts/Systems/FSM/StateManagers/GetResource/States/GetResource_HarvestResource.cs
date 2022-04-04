@@ -42,7 +42,8 @@ public class GetResource_HarvestResource : StateBase
             }
                  
         } 
-        else if(Manager.TargetResource == null)
+        // If resource was depleted while hartvesting
+        else if(Manager.TargetResource == null || Manager.TargetResource?.gameObject.activeInHierarchy == false)
         {
             // Currently harvested resource was destroyed => stop harvesting and find new resource
             Manager.StopCoroutine(coroutine);

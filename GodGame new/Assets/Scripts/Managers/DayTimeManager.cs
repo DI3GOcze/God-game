@@ -38,15 +38,13 @@ public class DayTimeManager : MonoBehaviour
     
     public Vector3 noon;
 
+    // Servers for skybox change
+    public Light fakeSun;
+
     [Header("Sun")]
     public Light sun;
     public Gradient sunColor;
     public AnimationCurve sunIntesity;
-
-    [Header("Moon")]
-    public Light moon;
-    public Gradient MoonColor;
-    public AnimationCurve moonIntesity;
 
     public AnimationCurve lightIntesityMultiplier;
     public AnimationCurve reflectionIntesityMultiplier;
@@ -63,17 +61,14 @@ public class DayTimeManager : MonoBehaviour
         if(scaledTime >= 1)
             scaledTime = 0f;
 
-        // Transform 
-        sun.transform.eulerAngles = (scaledTime - 0.25f) * noon * 4.0f;
-        moon.transform.eulerAngles = (scaledTime - 0.75f) * noon * 4.0f;
+        // Rotation 
+        fakeSun.transform.eulerAngles = (scaledTime - 0.25f) * noon * 4.0f;
         
         // Intensity 
         sun.intensity = sunIntesity.Evaluate(scaledTime);
-        moon.intensity = moonIntesity.Evaluate(scaledTime);
 
         // Colors
         sun.color = sunColor.Evaluate(scaledTime);
-        moon.color = MoonColor.Evaluate(scaledTime);
 
         RenderSettings.ambientIntensity = lightIntesityMultiplier.Evaluate(scaledTime);
         RenderSettings.reflectionIntensity = reflectionIntesityMultiplier.Evaluate(scaledTime);

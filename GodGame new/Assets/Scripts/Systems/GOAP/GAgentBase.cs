@@ -6,9 +6,7 @@ using UnityEngine.AI;
 public abstract class GAgentBase : MonoBehaviour
 {
     protected NavMeshAgent Agent;
-    public bool ReachedDestination => !Agent.pathPending && Agent.remainingDistance < Agent.stoppingDistance && Agent.hasPath;
-    [SerializeField] private bool _reachedDestination;
-
+    public bool ReachedDestination = false;
     protected virtual void Start()
     {
         Agent = GetComponent<NavMeshAgent>();
@@ -19,8 +17,20 @@ public abstract class GAgentBase : MonoBehaviour
         // Can be disabled by VR interaction
         if(Agent.enabled)
         {
-            _reachedDestination = ReachedDestination;
-            if (_reachedDestination)
+            // If agent isnt calculating path
+            if (!Agent.pathPending && !ReachedDestination)
+                // If the agent is close enough to the destination
+                if (Agent.remainingDistance <= Agent.stoppingDistance)
+                    // If the agent has a path or osnt moving
+                    // Sometimes if agent is to close to destination it wouldnt create path,
+                    // thats why we test his velocity
+                    if (!Agent.hasPath || Agent.velocity.sqrMagnitude == 0f)
+                        ReachedDestination = true;
+                    
+                
+            
+            
+            if (ReachedDestination)
             {
                 Agent.updateRotation = false;
                 Agent.isStopped = true;
@@ -33,6 +43,7 @@ public abstract class GAgentBase : MonoBehaviour
         Agent.SetDestination(destination);
         Agent.updateRotation = true;
         Agent.isStopped = false;
+        ReachedDestination = false;
     }
 
     public void GoToDestination(GameObject destinationObject)
