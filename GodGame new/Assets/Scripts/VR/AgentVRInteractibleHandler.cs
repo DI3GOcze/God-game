@@ -8,7 +8,7 @@ public class AgentVRInteractibleHandler : VRInteractionHandler
     [SerializeField] GPlanner _planner; 
     [SerializeField] NavMeshAgent _agent;
     [SerializeField] Rigidbody _rigidBody;
-    
+    [SerializeField] float stopFallingSpeed = 0.1f;
     private IEnumerator coroutine;
         
 
@@ -40,7 +40,7 @@ public class AgentVRInteractibleHandler : VRInteractionHandler
         if(_rigidBody != null)
         {
             // Until not stacionary
-            while (Mathf.Abs(_rigidBody.velocity.x)  > 0.05f || Mathf.Abs(_rigidBody.velocity.y)  > 0.05f || Mathf.Abs(_rigidBody.velocity.z) > 0.05f)
+            while (Mathf.Abs(_rigidBody.velocity.x)  > stopFallingSpeed || Mathf.Abs(_rigidBody.velocity.y)  > stopFallingSpeed || Mathf.Abs(_rigidBody.velocity.z) > stopFallingSpeed)
             {
                 yield return 0;
             }

@@ -5,6 +5,8 @@ using UnityEngine;
 public class WaterBall : MonoBehaviour
 {
     public float effectArea;
+    public GameObject particlePrefab;
+
 
     private void OnCollisionEnter(Collision other) {
         var colliders =  Physics.OverlapSphere(transform.position, effectArea);
@@ -16,6 +18,9 @@ public class WaterBall : MonoBehaviour
             else if(collider.TryGetComponent<FireableObject>(out var fireableObject))
                 fireableObject.PutDownFire();
         }
+
+        var particle = Instantiate(particlePrefab, transform.position, particlePrefab.transform.rotation);
+        particle.transform.localScale = new Vector3(particle.transform.localScale.x * effectArea, particle.transform.localScale.y * effectArea, particle.transform.localScale.z * effectArea);
 
         Destroy(gameObject);
     }  

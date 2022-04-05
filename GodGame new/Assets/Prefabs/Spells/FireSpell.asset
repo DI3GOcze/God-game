@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: FireSpell
   m_EditorClassIdentifier: 
   spellPrefab: {fileID: 2511560178299187482, guid: 67cc9e991f56f7c4a97fcde06963c250, type: 3}
-  staminaCost: 40
+  staminaCost: 50

@@ -127,6 +127,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effectArea: 10
+  particlePrefab: {fileID: 197368, guid: 992d56df7c560f84f916b4b55bbbd763, type: 3}
 --- !u!114 &-847466906508221111
 MonoBehaviour:
   m_ObjectHideFlags: 0

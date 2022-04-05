@@ -512,8 +512,13 @@ MonoBehaviour:
     Items:
       _keyData: 
       _valueData: 
+  isDepleted: 0
   harvestingTime: 6
   harvestingAmount: 5
+  resourceType: 1
+  depletedObject: {fileID: 0}
+  resourceHealth: 10
+  currentResourceHealth: 0
   startingStone: 60
 --- !u!208 &3817364273025251659
 NavMeshObstacle:

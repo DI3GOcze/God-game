@@ -15,7 +15,7 @@ public abstract class GAgentBase : MonoBehaviour
     protected virtual void Update()
     {
         // Can be disabled by VR interaction
-        if(Agent.enabled)
+        if(Agent.enabled && Agent.isOnNavMesh)
         {
             // If agent isnt calculating path
             if (!Agent.pathPending && !ReachedDestination)
@@ -26,10 +26,7 @@ public abstract class GAgentBase : MonoBehaviour
                     // thats why we test his velocity
                     if (!Agent.hasPath || Agent.velocity.sqrMagnitude == 0f)
                         ReachedDestination = true;
-                    
-                
-            
-            
+                       
             if (ReachedDestination)
             {
                 Agent.updateRotation = false;

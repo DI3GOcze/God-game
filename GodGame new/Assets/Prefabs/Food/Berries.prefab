@@ -12,13 +12,14 @@ GameObject:
   - component: {fileID: 863588008773378742}
   - component: {fileID: 852966448522381930}
   - component: {fileID: 4032712689231037951}
+  - component: {fileID: 6932691623298408795}
   m_Layer: 0
-  m_Name: SM_Prop_Plant_Bush_02_M
+  m_Name: Depleted
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &832022956386158184
 Transform:
   m_ObjectHideFlags: 0
@@ -96,7 +97,50 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   resource: {fileID: 7137009565087586020}
-  regenerationTime: 5
+  regenerationTime: 15
+--- !u!65 &6932691623298408795
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 828722089241639584}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.13, y: 0.6791332, z: 0.08}
+  m_Center: {x: 0.012818448, y: 0.29, z: -0.01}
+--- !u!1 &988914743157423130
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1759059336333053907}
+  m_Layer: 0
+  m_Name: FireSpawnPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1759059336333053907
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 988914743157423130}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.030684154, y: -0.00399971, z: -0.025000256}
+  m_LocalScale: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+  m_Children: []
+  m_Father: {fileID: 8126033074681085024}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3104542791573708107
 GameObject:
   m_ObjectHideFlags: 0
@@ -110,6 +154,7 @@ GameObject:
   - component: {fileID: 1447606403549332292}
   - component: {fileID: 5339375982661632543}
   - component: {fileID: 7137009565087586020}
+  - component: {fileID: 4978237946884492045}
   m_Layer: 0
   m_Name: Berries
   m_TagString: Untagged
@@ -129,6 +174,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6086926281444514862}
+  - {fileID: 1759059336333053907}
   m_Father: {fileID: 7866986258304029754}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -216,10 +262,36 @@ MonoBehaviour:
     Items:
       _keyData: 
       _valueData: 
+  isDepleted: 0
   harvestingTime: 4
   harvestingAmount: 20
+  resourceType: 2
   depletedObject: {fileID: 4032712689231037951}
+  resourceHealth: 10
+  currentResourceHealth: 0
   startingFood: 5
+--- !u!114 &4978237946884492045
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3104542791573708107}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15be337739b6eec44862d7744788d2af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _firePrefab: {fileID: 161698, guid: f5f21674805dd1a42ab29f3217b1d0d7, type: 3}
+  _fireModelSpawnPoint: {fileID: 988914743157423130}
+  igniteTreshold: 100
+  temperatureDecreaseRate: 20
+  temperatureIncreaseRate: 40
+  _temperature: 0
+  onFireDamage: 5
+  isDead: 0
+  isInIgnitedCells: 0
+  resource: {fileID: 7137009565087586020}
 --- !u!1 &4753107401182249248
 GameObject:
   m_ObjectHideFlags: 0

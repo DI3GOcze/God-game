@@ -38,7 +38,7 @@ public abstract class FireableObject : MonoBehaviour
     }
     public bool isDead = false;
     public int isInIgnitedCells = 0;
-    private void Start() {
+    protected virtual void Start() {
         CoolDownTemperature();
     }
 

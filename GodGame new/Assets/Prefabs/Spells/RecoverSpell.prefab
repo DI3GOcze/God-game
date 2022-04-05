@@ -63,7 +63,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f2640fd2c7429ae4e8ce3a50e1e8faae, type: 2}
+  - {fileID: 2100000, guid: 6e1fe83316caba840b94653478a44e32, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -242,3 +242,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effectArea: 10
+  particlePrefab: {fileID: 7075040940365923278, guid: 27f3b4d33d4ad604d9eadc3a83c588b1, type: 3}

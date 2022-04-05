@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a646c792828cd2c4ab99b5fcee716491, type: 3}
   m_Name: RecoverSpell
   m_EditorClassIdentifier: 
-  spellPrefab: {fileID: 2511560178299187482, guid: 67cc9e991f56f7c4a97fcde06963c250, type: 3}
-  staminaCost: 40
+  spellPrefab: {fileID: 2511560178299187482, guid: 377d3e620fc8544498f618d1f1a6f3b3, type: 3}
+  staminaCost: 80

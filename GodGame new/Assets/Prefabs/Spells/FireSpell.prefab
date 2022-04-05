@@ -126,7 +126,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5346159d43262e74da3e823eaa8fc36f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  effectArea: 3
+  effectArea: 5
   fireExplosionPrefab: {fileID: 169654, guid: 1dadf691cda82fa44a8a66d7dd374612, type: 3}
 --- !u!114 &-1048352144340426799
 MonoBehaviour:

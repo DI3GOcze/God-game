@@ -6,7 +6,6 @@ using UnityEngine.UI;
 // Person has its home, parents?, hunger
 public class Person : GAgentBase
 {
-    public Slider hungerBar;
     public float maxHunger = 100f;
     public float HungerIncreasePerSecond = 1f;
     [SerializeField]
@@ -36,25 +35,5 @@ public class Person : GAgentBase
             hunger = maxHunger;
             Die();
         }
-
     }
-
-    private void OnMouseEnter()
-    {
-        if (hungerBar != null)
-            hungerBar.gameObject.SetActive(true);
-    }
-
-    private void OnMouseExit()
-    {
-        if (hungerBar != null)
-            hungerBar.gameObject.SetActive(false);
-    }
-
-    private void OnMouseOver()
-    {
-        if (hungerBar != null)
-            hungerBar.value = HungerNormalized;
-    }
-
 }

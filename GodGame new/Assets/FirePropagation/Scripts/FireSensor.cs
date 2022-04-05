@@ -15,7 +15,7 @@ public class FireSensor : MonoBehaviour
     
     private void OnTriggerEnter(Collider other) {       
         if(other.gameObject.TryGetComponent<FireableObject>(out var fireableObject))
-        {
+        {  
             OnObjectEntered?.Invoke(fireableObject);
         }
     }

@@ -54,6 +54,13 @@ public class DayTimeManager : MonoBehaviour
         scaledTime = startingTime;
     }
 
+    public void IncreaseTimeByHours(int hours){
+        float normalizedHours = (float)hours / 24f;
+        scaledTime += normalizedHours;
+        if(scaledTime >= 1)
+            scaledTime -= 1f;
+    }
+    
     // Update is called once per frame
     void Update()
     {

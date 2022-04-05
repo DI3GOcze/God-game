@@ -18,6 +18,10 @@ public class Grown : Person
     protected override void Start() {
         base.Start();
         World.Instance.grownList.Add(this);
+
+        // Add components base on his selected component
+        AddProfession(_profession);
+        _planner.UpdateGoalsAndActions();
     }
 
     override protected void OnDestroy() {

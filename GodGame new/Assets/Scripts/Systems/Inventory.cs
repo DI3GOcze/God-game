@@ -106,6 +106,16 @@ public class Inventory<T>
         return 0;
     }
 
+    public int ItemAmount(T item) 
+    {
+        if(HasItem(item))
+        {
+            return Items[item];
+        }
+
+        return 0;
+    }
+
     // Seizes ammount of item from Inventory
     // If there is nothing left, seizes what is left and deletes item
     public int SeizeAndDeleteItemOnEmpty(T item, int ammount)

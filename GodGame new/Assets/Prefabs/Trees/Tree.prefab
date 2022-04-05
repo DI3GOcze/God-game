@@ -33,7 +33,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2226687865128604750}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &7543366918085867768
 MeshFilter:
@@ -127,7 +127,37 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   resource: {fileID: 2775685149850358921}
-  regenerationTime: 60
+  regenerationTime: 15
+--- !u!1 &686145298752845873
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 390814473294116327}
+  m_Layer: 0
+  m_Name: FireSpawnPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &390814473294116327
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 686145298752845873}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.78, z: 0}
+  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_Children: []
+  m_Father: {fileID: 1794291417349605942}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1769643590339564642
 GameObject:
   m_ObjectHideFlags: 0
@@ -425,8 +455,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children:
-  - {fileID: 3986143007522171777}
   - {fileID: 1794291417349605942}
+  - {fileID: 3986143007522171777}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -581,6 +611,7 @@ GameObject:
   - component: {fileID: 9188957066357432385}
   - component: {fileID: 2625160545292843070}
   - component: {fileID: 2775685149850358921}
+  - component: {fileID: 4553979205774397223}
   m_Layer: 0
   m_Name: Resource
   m_TagString: Tree
@@ -601,8 +632,9 @@ Transform:
   m_Children:
   - {fileID: 5656200098367231327}
   - {fileID: 5789209548613738385}
+  - {fileID: 390814473294116327}
   m_Father: {fileID: 2226687865128604750}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &5913569608224407059
 MeshFilter:
@@ -704,10 +736,36 @@ MonoBehaviour:
     Items:
       _keyData: 
       _valueData: 
+  isDepleted: 0
   harvestingTime: 5
   harvestingAmount: 20
+  resourceType: 0
   depletedObject: {fileID: 4109109123061421653}
-  startingWood: 5
+  resourceHealth: 10
+  currentResourceHealth: 0
+  startingWood: 15
+--- !u!114 &4553979205774397223
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5566633614032318730}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15be337739b6eec44862d7744788d2af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _firePrefab: {fileID: 161698, guid: f5f21674805dd1a42ab29f3217b1d0d7, type: 3}
+  _fireModelSpawnPoint: {fileID: 686145298752845873}
+  igniteTreshold: 100
+  temperatureDecreaseRate: 20
+  temperatureIncreaseRate: 40
+  _temperature: 0
+  onFireDamage: 5
+  isDead: 0
+  isInIgnitedCells: 0
+  resource: {fileID: 2775685149850358921}
 --- !u!1 &5798488168933354443
 GameObject:
   m_ObjectHideFlags: 0
