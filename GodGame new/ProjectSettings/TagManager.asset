@@ -16,7 +16,7 @@ TagManager:
   - Terrain
   - PlayerTriggers
   - FireSensors
-  - 
+  - NoCollisions
   - 
   - 
   - 

@@ -17,6 +17,7 @@ public class FireBall : MonoBehaviour
             else if(collider.TryGetComponent<FireableObject>(out var fireableObject))
                 fireableObject.IgniteObject();
         }
+        
         var explosion = Instantiate(fireExplosionPrefab, transform.position, fireExplosionPrefab.transform.rotation);
         explosion.transform.localScale = new Vector3(explosion.transform.localScale.x * effectArea, explosion.transform.localScale.y * effectArea, explosion.transform.localScale.z * effectArea);
 

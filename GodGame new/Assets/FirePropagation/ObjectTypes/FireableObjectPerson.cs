@@ -8,7 +8,8 @@ public class FireableObjectPerson : FireableObject
 {
     [SerializeField] Grown _grown;
     
-    private void Start() {
+    protected override void Start() {
+        base.Start();
         _grown = GetComponent<Grown>();   
     }
 
