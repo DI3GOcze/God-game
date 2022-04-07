@@ -7,6 +7,7 @@ using UnityEngine;
 public class BuildingScriptableObject : ScriptableObject
 {
     public GameObject buildingPrefab;
+    public GameObject buildingGhost;
     public int woodCost;
     public int stoneCost;
 }

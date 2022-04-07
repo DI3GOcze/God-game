@@ -2,73 +2,107 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR;
+using UnityEngine.UI;
 
 public class BuildManager : MonoBehaviour
 {
+    public static BuildManager Instance;
+    
     public UnityEngine.XR.Interaction.Toolkit.XRRayInteractor rayInteractor;
     public Transform desiredBuildingParent;
     public string noCollidingLayerName;
 
-    private BuildingScriptableObject selectedBuilding;
-    private GameObject buildingGhost;
-    
+    private BuildingScriptableObject _selectedBuilding;
+    private GameObject _buildingGhost;
+
+    // Singleton
+    private void Awake() {
+        if (Instance != null) {
+            Destroy(gameObject);
+            return;
+        }
+
+        Instance = this;
+    }
+
     private void Update() {
-        if (buildingGhost == null)
+        
+        if (_buildingGhost == null)
             return;
 
         if (rayInteractor.TryGetCurrent3DRaycastHit(out RaycastHit hit))
         {
             if (hit.transform.gameObject.layer != LayerMask.NameToLayer("Terrain"))
             {
-                buildingGhost.SetActive(false);
+                _buildingGhost.SetActive(false);
                 return;
             }
                 
             
-            buildingGhost.SetActive(true);
+            _buildingGhost.SetActive(true);
                  
             // Set position of ghost to the rayHit
-            buildingGhost.transform.position = hit.point;
+            _buildingGhost.transform.position = hit.point;
 
             var direction = (hit.point - rayInteractor.transform.position).normalized;
 
             // Rotate ghost
-            var eulerRotation = buildingGhost.transform.eulerAngles;
-            buildingGhost.transform.rotation = Quaternion.Euler(new Vector3(buildingGhost.transform.eulerAngles.x, rayInteractor.transform.eulerAngles.y, buildingGhost.transform.eulerAngles.z));
+            var eulerRotation = _buildingGhost.transform.eulerAngles;
+            _buildingGhost.transform.rotation = Quaternion.Euler(new Vector3(_buildingGhost.transform.eulerAngles.x, rayInteractor.transform.eulerAngles.y, _buildingGhost.transform.eulerAngles.z));
         }
         else
         {
-            buildingGhost.SetActive(false);
+            _buildingGhost.SetActive(false);
         }
     }
 
     private void OnDisable() {
-        Destroy(buildingGhost);
+        if (_buildingGhost != null)
+            Destroy(_buildingGhost.gameObject);
     }
 
     public void ConstructBuilding()
     {
-        if (buildingGhost == null)
+        if (_buildingGhost == null)
             return;
 
-        if (!buildingGhost.activeInHierarchy)
+        if (!_buildingGhost.activeInHierarchy)
             return;
 
-        Instantiate(selectedBuilding.buildingPrefab, buildingGhost.transform.position, buildingGhost.transform.rotation, desiredBuildingParent);
-        return;
+        var inventory = Warehouse.warehouseInvetory;
+
+        var woodAmount = inventory.ItemAmount(ResourceTypes.WOOD);
+        var stoneAmount = inventory.ItemAmount(ResourceTypes.STONE);
+
+        // If not enough resources
+        if(woodAmount < _selectedBuilding.woodCost || stoneAmount < _selectedBuilding.stoneCost) 
+            return;
+        
+        inventory.SeizeItem(ResourceTypes.WOOD, _selectedBuilding.woodCost);
+        inventory.SeizeItem(ResourceTypes.STONE, _selectedBuilding.stoneCost);
+
+        Instantiate(_selectedBuilding.buildingPrefab, _buildingGhost.transform.position, _buildingGhost.transform.rotation, desiredBuildingParent);
+        
+        Destroy(_buildingGhost.gameObject);
+        _selectedBuilding = null;
     }
 
     public void SelectBuilding(BuildingScriptableObject building)
     {
-        selectedBuilding = building;
+        // If clicked on same building, toggle ghost
+        if (building == _selectedBuilding)
+        {
+            Destroy(_buildingGhost);
+            _selectedBuilding = null;
+            return;
+        }
+
+        _selectedBuilding = building;
         
         // Destroy currently selected building ghost
-        Destroy(buildingGhost);
+        Destroy(_buildingGhost);
 
         // Create ghost of new selected prefab
-        buildingGhost = Instantiate(selectedBuilding.buildingPrefab, Vector3.zero, selectedBuilding.buildingPrefab.transform.rotation, desiredBuildingParent);
-        
-        // We need to assign noncolliding layer, because ray of interactor woud collide with the ghost
-        buildingGhost.layer = LayerMask.NameToLayer(noCollidingLayerName);
+        _buildingGhost = Instantiate(_selectedBuilding.buildingGhost, Vector3.zero, _selectedBuilding.buildingGhost.transform.rotation);
     }
 }

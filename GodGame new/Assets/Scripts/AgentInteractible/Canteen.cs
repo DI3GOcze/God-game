@@ -21,13 +21,4 @@ public class Canteen : AgentInteractibleBase
         base.Awake();   
         MaxAgantCapacity = 2; 
     }
-
-    private void Update() {
-        UpdateGUI();
-    }
-
-    protected override void OnMouseExit()
-    {
-        // Dont deactivate GUI
-    }
 }

@@ -6,5 +6,5 @@ using UnityEngine;
 public class MagicSpell : ScriptableObject
 {
     public GameObject spellPrefab;
-    public float staminaCost;
+    public float manaCost;
 }

@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: WaterSpell
   m_EditorClassIdentifier: 
   spellPrefab: {fileID: 6269505379793237884, guid: c845e9ebe8e2c7047ab2e075f40cd69f, type: 3}
-  staminaCost: 10
+  manaCost: 10

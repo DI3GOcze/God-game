@@ -7,9 +7,9 @@ public class SpellManager : MonoBehaviour
     public GameObject spawningPoint;
     public void SpawnSpell(MagicSpell magicSPell)
     {
-        if (PlayerStatManager.instance.stamina >= magicSPell.staminaCost) {
+        if (PlayerStatManager.instance.mana >= magicSPell.manaCost) {
             Instantiate(magicSPell.spellPrefab, spawningPoint.transform.position, magicSPell.spellPrefab.transform.rotation);
-            PlayerStatManager.instance.DecreseStamina(magicSPell.staminaCost);
+            PlayerStatManager.instance.DecreseMana(magicSPell.manaCost);
             return ;
         }
         else {

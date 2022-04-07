@@ -12,8 +12,6 @@ public abstract class AgentInteractibleBase : MonoBehaviour
     public TextMeshProUGUI FoodText;
     public int FreeSpots => MaxAgantCapacity - AssignedAgents.Count; 
     
-    [Serializable]public class ResourceTypesInventory : Inventory <ResourceTypes> { }
-
     [SerializeField] public ResourceTypesInventory Resources;       
     // This cannot be changed dynamicly
     public int MaxAgantCapacity  { get; protected set; } = 1;
@@ -68,19 +66,6 @@ public abstract class AgentInteractibleBase : MonoBehaviour
             return Resources.IsEmpty();
         
         return true;
-    }
-
-    protected virtual void OnMouseOver() {
-        UpdateGUI();
-    }
-
-    protected virtual void OnMouseEnter() {
-        if(ResourcePanel != null)
-            ResourcePanel.gameObject.SetActive(true); 
-    }
-    protected virtual void OnMouseExit() {
-        if(ResourcePanel != null)
-            ResourcePanel.gameObject.SetActive(false);
     }
 
     protected virtual void UpdateGUI()

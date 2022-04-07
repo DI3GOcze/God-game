@@ -9,34 +9,21 @@ public class UpdateText : MonoBehaviour
     public TextMeshProUGUI wood;
     public TextMeshProUGUI stone;
     public TextMeshProUGUI food;
+    
+    private ResourceTypesInventory inventory;
 
     private void Start() {
-        if (warehouse == null)
-            warehouse = GameObject.Find("Warehouse").GetComponent<Warehouse>();
+        inventory = Warehouse.warehouseInvetory;
     }
 
     private void Update() {
-        if(warehouse == null)
-            return;
         
-        string woodNum;
-        if(warehouse.Resources.Items.ContainsKey(ResourceTypes.WOOD))
-            woodNum = warehouse.Resources.Items[ResourceTypes.WOOD].ToString();
-        else
-            woodNum = "0";
+        string woodNum = inventory.ItemAmount(ResourceTypes.WOOD).ToString();
 
-        string stoneNum;
-        if(warehouse.Resources.Items.ContainsKey(ResourceTypes.STONE))
-            stoneNum = warehouse.Resources.Items[ResourceTypes.STONE].ToString();
-        else
-            stoneNum = "0";
+        string stoneNum = inventory.ItemAmount(ResourceTypes.STONE).ToString();
 
-        string foodNum = "0";
-        if(warehouse.Resources.Items.ContainsKey(ResourceTypes.FOOD))
-            foodNum = warehouse.Resources.Items[ResourceTypes.FOOD].ToString();
-        else
-            foodNum = "0";
-
+        string foodNum = inventory.ItemAmount(ResourceTypes.FOOD).ToString();
+        
         if(wood != null)
             wood.text = "Wood: " + woodNum;
 
