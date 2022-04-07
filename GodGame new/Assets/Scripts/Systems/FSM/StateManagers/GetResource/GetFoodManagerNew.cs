@@ -15,6 +15,11 @@ public class GetFoodManager : GetResourceManager
         get { return ResourceTypes.FOOD; } 
     }
 
+    protected void Awake() {
+        resourceProp = transform.Find("Resources")?.Find("Food").gameObject;
+        toolProp = transform.Find("Resources")?.Find("Box").gameObject;
+    }    
+
     public override DepletableResource[] GetValidResources() => World.Instance.GetFreeResource<BerriesResource>().ToArray();
     public override AgentInteractibleBase[] GetDeliverTargets() => World.Instance.GetFreeResource<Canteen>().ToArray();
 }

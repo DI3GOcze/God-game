@@ -34,9 +34,16 @@ public class GetResource_DeliverResource : StateBase
         }
     }
 
+    public override void EnterState()
+    {
+        base.EnterState();
+        Manager.resourceProp?.SetActive(true);
+    }
+
     public override void ExitState()
     {
         base.ExitState();
+        Manager.resourceProp?.SetActive(false);
         DeliverTarget = null;
         Manager.ResetManager();
     }

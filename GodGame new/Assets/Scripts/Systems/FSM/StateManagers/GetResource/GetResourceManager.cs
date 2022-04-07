@@ -15,6 +15,9 @@ public abstract class GetResourceManager : StateManagerBase
     public abstract ResourceTypes targetResourceType { get; }
     public abstract DepletableResource[] GetValidResources();
     public virtual AgentInteractibleBase[] GetDeliverTargets() => World.Instance.GetFreeResource<Warehouse>().ToArray();
+    // Model of delivered resource
+    public GameObject resourceProp;
+    public GameObject toolProp;
     public override void OnActivated()
     {
         ResetManager();

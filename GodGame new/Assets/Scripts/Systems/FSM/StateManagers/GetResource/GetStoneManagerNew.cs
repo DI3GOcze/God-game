@@ -14,6 +14,11 @@ public class GetStoneManager : GetResourceManager
         get { return ResourceTypes.STONE; } 
     }
 
+    protected void Awake() {
+        resourceProp = transform.Find("Resources")?.Find("Stone")?.gameObject;
+        toolProp = transform.Find("Resources")?.Find("PickAxe").gameObject;
+    }    
+
     public override DepletableResource[] GetValidResources() => World.Instance.GetFreeResource<StoneResource>().ToArray();
 
 }

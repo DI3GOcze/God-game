@@ -14,5 +14,10 @@ public class GetWoodManager : GetResourceManager
         get { return ResourceTypes.WOOD; } 
     }
 
+    protected void Awake() {
+        resourceProp = transform.Find("Resources")?.Find("Wood").gameObject;
+        toolProp = transform.Find("Resources")?.Find("Axe").gameObject;
+    }    
+
     public override DepletableResource[] GetValidResources() => World.Instance.GetFreeResource<TreeResource>().ToArray();
 }

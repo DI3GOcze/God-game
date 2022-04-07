@@ -36,4 +36,16 @@ public class GetResource_GoToAResource : StateBase
         }
             
     }
+
+    public override void EnterState()
+    {
+        base.EnterState();
+        Manager.toolProp?.SetActive(true);
+    }
+
+    public override void ExitState()
+    {
+        base.ExitState();
+        Manager.toolProp?.SetActive(false);
+    }
 }
