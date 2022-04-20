@@ -16,7 +16,7 @@ public class WaterBall : MonoBehaviour
             if(collider.TryGetComponent<FireGridCell>(out var fireCell))
                 fireCell.PutDownFire();
             else if(collider.TryGetComponent<FireableObject>(out var fireableObject))
-                fireableObject.PutDownFire();
+                fireableObject.CoolDownTemperature();
         }
 
         var particle = Instantiate(particlePrefab, transform.position, particlePrefab.transform.rotation);

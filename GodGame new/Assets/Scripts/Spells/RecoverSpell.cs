@@ -15,7 +15,6 @@ public class RecoverSpell : MonoBehaviour
         {
             if(collider.TryGetComponent<DepletedResource>(out var depletedResource)){
                 depletedResource.Regenerate();
-                Debug.Log("regeneruju");
             }
         }
 

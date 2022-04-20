@@ -1,0 +1,191 @@
+Date : 2022-04-16 12:10:08
+Directory : g:\Radsi_knihu\bakalarka\god-game.git\GodGame new\Assets
+Total : 121 files,  6677 codes, 406 comments, 1572 blanks, all 8655 lines
+
+Languages
++-----------+------------+------------+------------+------------+------------+
+| language  | files      | code       | comment    | blank      | total      |
++-----------+------------+------------+------------+------------+------------+
+| C#        |        101 |      4,104 |        310 |        904 |      5,318 |
+| ShaderLab |         15 |      2,095 |         75 |        579 |      2,749 |
+| HLSL      |          4 |        323 |         21 |         87 |        431 |
+| JSON      |          1 |        155 |          0 |          2 |        157 |
++-----------+------------+------------+------------+------------+------------+
+
+Directories
++-------------------------------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                                                                                            | files      | code       | comment    | blank      | total      |
++-------------------------------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                                                                               |        121 |      6,677 |        406 |      1,572 |      8,655 |
+| Debug                                                                                                                                           |          1 |         17 |          0 |          2 |         19 |
+| FirePropagation                                                                                                                                 |          6 |        406 |         67 |        103 |        576 |
+| FirePropagation\ObjectTypes                                                                                                                     |          2 |         33 |          0 |          8 |         41 |
+| FirePropagation\Scripts                                                                                                                         |          4 |        373 |         67 |         95 |        535 |
+| Imported                                                                                                                                        |         15 |      1,021 |         69 |        215 |      1,305 |
+| Imported\Archanor                                                                                                                               |         12 |        748 |         16 |        115 |        879 |
+| Imported\Archanor\Sci-Fi Arsenal                                                                                                                |         12 |        748 |         16 |        115 |        879 |
+| Imported\Archanor\Sci-Fi Arsenal\InteractiveDemo                                                                                                |          7 |        538 |          8 |         79 |        625 |
+| Imported\Archanor\Sci-Fi Arsenal\InteractiveDemo\Demo Scripts                                                                                   |          7 |        538 |          8 |         79 |        625 |
+| Imported\Archanor\Sci-Fi Arsenal\Sci-Fi Effects                                                                                                 |          5 |        210 |          8 |         36 |        254 |
+| Imported\Archanor\Sci-Fi Arsenal\Sci-Fi Effects\Scripts                                                                                         |          5 |        210 |          8 |         36 |        254 |
+| Imported\QuickOutline                                                                                                                           |          3 |        273 |         53 |        100 |        426 |
+| Imported\QuickOutline\Resources                                                                                                                 |          2 |         80 |         14 |         22 |        116 |
+| Imported\QuickOutline\Resources\Shaders                                                                                                         |          2 |         80 |         14 |         22 |        116 |
+| Imported\QuickOutline\Scripts                                                                                                                   |          1 |        193 |         39 |         78 |        310 |
+| ScriptableObjects                                                                                                                               |          2 |         20 |          0 |          5 |         25 |
+| Scripts                                                                                                                                         |         74 |      2,510 |        185 |        539 |      3,234 |
+| Scripts\AgentInteractible                                                                                                                       |          8 |        266 |         18 |         66 |        350 |
+| Scripts\Enums                                                                                                                                   |          4 |         39 |          3 |          6 |         48 |
+| Scripts\Functions                                                                                                                               |          6 |        116 |          3 |         23 |        142 |
+| Scripts\Inventories                                                                                                                             |          1 |          8 |          0 |          2 |         10 |
+| Scripts\Managers                                                                                                                                |          8 |        374 |         24 |         95 |        493 |
+| Scripts\Spells                                                                                                                                  |          3 |         62 |          0 |         20 |         82 |
+| Scripts\Systems                                                                                                                                 |         40 |      1,426 |        120 |        274 |      1,820 |
+| Scripts\Systems\FSM                                                                                                                             |         17 |        473 |         36 |         80 |        589 |
+| Scripts\Systems\FSM\StateManagers                                                                                                               |         14 |        413 |         32 |         69 |        514 |
+| Scripts\Systems\FSM\StateManagers\Eat                                                                                                           |          4 |        123 |         10 |         20 |        153 |
+| Scripts\Systems\FSM\StateManagers\Eat\States                                                                                                    |          3 |         82 |          9 |         13 |        104 |
+| Scripts\Systems\FSM\StateManagers\GetResource                                                                                                   |          7 |        236 |         22 |         36 |        294 |
+| Scripts\Systems\FSM\StateManagers\GetResource\States                                                                                            |          3 |        126 |         20 |         17 |        163 |
+| Scripts\Systems\FSM\StateManagers\GoToSafety                                                                                                    |          3 |         54 |          0 |         13 |         67 |
+| Scripts\Systems\FSM\StateManagers\GoToSafety\States                                                                                             |          2 |         39 |          0 |         10 |         49 |
+| Scripts\Systems\GOAP                                                                                                                            |         19 |        646 |         57 |        142 |        845 |
+| Scripts\Systems\GOAP\Actions                                                                                                                    |          6 |        165 |          6 |         39 |        210 |
+| Scripts\Systems\GOAP\Agents                                                                                                                     |          2 |        129 |         13 |         29 |        171 |
+| Scripts\Systems\GOAP\Goals                                                                                                                      |          6 |        100 |          6 |         19 |        125 |
+| Scripts\VR                                                                                                                                      |          4 |        219 |         17 |         53 |        289 |
+| TextMesh Pro                                                                                                                                    |         18 |      2,493 |         82 |        646 |      3,221 |
+| TextMesh Pro\Shaders                                                                                                                            |         17 |      2,338 |         82 |        644 |      3,064 |
+| TextMesh Pro\Sprites                                                                                                                            |          1 |        155 |          0 |          2 |        157 |
+| TutorialInfo                                                                                                                                    |          2 |        138 |          1 |         35 |        174 |
+| TutorialInfo\Scripts                                                                                                                            |          2 |        138 |          1 |         35 |        174 |
+| TutorialInfo\Scripts\Editor                                                                                                                     |          1 |        126 |          1 |         32 |        159 |
++-------------------------------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++-------------------------------------------------------------------------------------------------------------------------------------------------+-----------+------------+------------+------------+------------+
+| filename                                                                                                                                        | language  | code       | comment    | blank      | total      |
++-------------------------------------------------------------------------------------------------------------------------------------------------+-----------+------------+------------+------------+------------+
+| g:\Radsi_knihu\bakalarka\god-game.git\GodGame new\Assets\Debug\LookAtCamera.cs                                                                  | C#        |         17 |          0 |          2 |         19 |
+| g:\Radsi_knihu\bakalarka\god-game.git\GodGame new\Assets\FirePropagation\ObjectTypes\FireableObjectPerson.cs                                    | C#        |         17 |          0 |          4 |         21 |
+| g:\Radsi_knihu\bakalarka\god-game.git\GodGame new\Assets\FirePropagation\ObjectTypes\FireableObjectResource.cs                                  | C#        |         16 |          0 |          4 |         20 |
+| g:\Radsi_knihu\bakalarka\god-game.git\GodGame new\Assets\FirePropagation\Scripts\FireGridCell.cs                                                | C#        |        128 |         16 |         31 |        175 |
+| g:\Radsi_knihu\bakalarka\god-game.git\GodGame new\Assets\FirePropagation\Scripts\FirePropagationManager.cs                                      | C#        |        131 |         40 |         39 |        210 |
+| g:\Radsi_knihu\bakalarka\god-game.git\GodGame new\Assets\FirePropagation\Scripts\FireSensor.cs                                                  | C#        |         21 |          0 |          4 |         25 |
+| g:\Radsi_knihu\bakalarka\god-game.git\GodGame new\Assets\FirePropagation\Scripts\FireableObject.cs                                              | C#        |         93 |         11 |         21 |        125 |
+| g:\Radsi_knihu\bakalarka\god-game.git\GodGame new\Assets\Imported\Archanor\Sci-Fi Arsenal\InteractiveDemo\Demo Scripts\SciFiBeamScript.cs       | C#        |        128 |          2 |         28 |        158 |
+| g:\Radsi_knihu\bakalarka\god-game.git\GodGame new\Assets\Imported\Archanor\Sci-Fi Arsenal\InteractiveDemo\Demo Scripts\SciFiButtonScript.cs     | C#        |         49 |          1 |          8 |         58 |
+| g:\Radsi_knihu\bakalarka\god-game.git\GodGame new\Assets\Imported\Archanor\Sci-Fi Arsenal\InteractiveDemo\Demo Scripts\SciFiDragMouseOrbit.cs   | C#        |         67 |          3 |          4 |         74 |
+| g:\Radsi_knihu\bakalarka\god-game.git\GodGame new\Assets\Imported\Archanor\Sci-Fi Arsenal\InteractiveDemo\Demo Scripts\SciFiFireProjectile.cs   | C#        |         74 |          1 |         11 |         86 |
+| g:\Radsi_knihu\bakalarka\god-game.git\GodGame new\Assets\Imported\Archanor\Sci-Fi Arsenal\InteractiveDemo\Demo Scripts\SciFiLoadSceneOnClick.cs | C#        |        138 |          0 |         10 |        148 |
+| g:\Radsi_knihu\bakalarka\god-game.git\GodGame new\Assets\Imported\Archanor\Sci-Fi Arsenal\InteractiveDemo\Demo Scripts\SciFiLoopScript.cs       | C#        |         25 |          0 |          9 |         34 |
+| g:\Radsi_knihu\bakalarka\god-game.git\GodGame new\Assets\Imported\Archanor\Sci-Fi Arsenal\InteractiveDemo\Demo Scripts\SciFiProjectileScript.cs | C#        |         57 |          1 |          9 |         67 |
+| g:\Radsi_knihu\bakalarka\god-game.git\GodGame new\Assets\Imported\Archanor\Sci-Fi Arsenal\Sci-Fi Effects\Scripts\SciFiBeamStatic.cs             | C#        |         92 |          1 |         15 |        108 |
+| g:\Radsi_knihu\bakalarka\god-game.git\GodGame new\Assets\Imported\Archanor\Sci-Fi Arsenal\Sci-Fi Effects\Scripts\SciFiLightFade.cs              | C#        |         32 |          2 |          4 |         38 |
+| g:\Radsi_knihu\bakalarka\god-game.git\GodGame new\Assets\Imported\Archanor\Sci-Fi Arsenal\Sci-Fi Effects\Scripts\SciFiLightFlicker.cs           | C#        |         51 |          3 |          7 |         61 |
+| g:\Radsi_knihu\bakalarka\god-game.git\GodGame new\Assets\Imported\Archanor\Sci-Fi Arsenal\Sci-Fi Effects\Scripts\SciFiPitchRandomizer.cs        | C#        |         13 |          0 |          4 |         17 |
+| g:\Radsi_knihu\bakalarka\god-game.git\GodGame new\Assets\Imported\Archanor\Sci-Fi Arsenal\Sci-Fi Effects\Scripts\SciFiRotation.cs               | C#        |         22 |          2 |          6 |         30 |
+| g:\Radsi_knihu\bakalarka\god-game.git\GodGame new\Assets\Imported\QuickOutline\Resources\Shaders\OutlineFill.shader                             | ShaderLab |         58 |          7 |         17 |         82 |
+| g:\Radsi_knihu\bakalarka\god-game.git\GodGame new\Assets\Imported\QuickOutline\Resources\Shaders\OutlineMask.shader                             | ShaderLab |         22 |          7 |          5 |         34 |
+| g:\Radsi_knihu\bakalarka\god-game.git\GodGame new\Assets\Imported\QuickOutline\Scripts\Outline.cs                                               | C#        |        193 |         39 |         78 |        310 |
+| g:\Radsi_knihu\bakalarka\god-game.git\GodGame new\Assets\RandomFireManager.cs                                                                   | C#        |         34 |          2 |         11 |         47 |
+| g:\Radsi_knihu\bakalarka\god-game.git\GodGame new\Assets\ScriptableObjects\BuildingScriptableObject.cs                                          | C#        |         11 |          0 |          3 |         14 |
+| g:\Radsi_knihu\bakalarka\god-game.git\GodGame new\Assets\ScriptableObjects\MagicSpell.cs                                                        | C#        |          9 |          0 |          2 |         11 |
+| g:\Radsi_knihu\bakalarka\god-game.git\GodGame new\Assets\Scripts\AgentInteractible\AgentInteractibleBase.cs                                     | C#        |         84 |          1 |         19 |        104 |
+| g:\Radsi_knihu\bakalarka\god-game.git\GodGame new\Assets\Scripts\AgentInteractible\BerriesResource.cs                                           | C#        |         18 |          0 |          4 |         22 |
+| g:\Radsi_knihu\bakalarka\god-game.git\GodGame new\Assets\Scripts\AgentInteractible\Canteen.cs                                                   | C#        |         18 |          3 |          4 |         25 |
+| g:\Radsi_knihu\bakalarka\god-game.git\GodGame new\Assets\Scripts\AgentInteractible\DepletableResource.cs                                        | C#        |         70 |         11 |         21 |        102 |
+| g:\Radsi_knihu\bakalarka\god-game.git\GodGame new\Assets\Scripts\AgentInteractible\DepletedResource.cs                                          | C#        |         24 |          0 |          5 |         29 |
+| g:\Radsi_knihu\bakalarka\god-game.git\GodGame new\Assets\Scripts\AgentInteractible\StoneResource.cs                                             | C#        |         18 |          0 |          5 |         23 |
+| g:\Radsi_knihu\bakalarka\god-game.git\GodGame new\Assets\Scripts\AgentInteractible\TreeResource.cs                                              | C#        |         18 |          0 |          4 |         22 |
+| g:\Radsi_knihu\bakalarka\god-game.git\GodGame new\Assets\Scripts\AgentInteractible\Warehouse.cs                                                 | C#        |         16 |          3 |          4 |         23 |
+| g:\Radsi_knihu\bakalarka\god-game.git\GodGame new\Assets\Scripts\Enums\DefaultStatValues.cs                                                     | C#        |         10 |          0 |          1 |         11 |
+| g:\Radsi_knihu\bakalarka\god-game.git\GodGame new\Assets\Scripts\Enums\Proffesions.cs                                                           | C#        |         10 |          3 |          2 |         15 |
+| g:\Radsi_knihu\bakalarka\god-game.git\GodGame new\Assets\Scripts\Enums\ResourceTypes.cs                                                         | C#        |         10 |          0 |          1 |         11 |
+| g:\Radsi_knihu\bakalarka\god-game.git\GodGame new\Assets\Scripts\Enums\StructureTags.cs                                                         | C#        |          9 |          0 |          2 |         11 |
+| g:\Radsi_knihu\bakalarka\god-game.git\GodGame new\Assets\Scripts\Functions\AnimateHand.cs                                                       | C#        |         33 |          2 |          6 |         41 |
+| g:\Radsi_knihu\bakalarka\god-game.git\GodGame new\Assets\Scripts\Functions\EneblaButtonMana.cs                                                  | C#        |         20 |          0 |          2 |         22 |
+| g:\Radsi_knihu\bakalarka\god-game.git\GodGame new\Assets\Scripts\Functions\EnebleBuildingButton.cs                                              | C#        |         23 |          1 |          7 |         31 |
+| g:\Radsi_knihu\bakalarka\god-game.git\GodGame new\Assets\Scripts\Functions\SliderColorChange.cs                                                 | C#        |         15 |          0 |          2 |         17 |
+| g:\Radsi_knihu\bakalarka\god-game.git\GodGame new\Assets\Scripts\Functions\ToggleObjectActive.cs                                                | C#        |         10 |          0 |          2 |         12 |
+| g:\Radsi_knihu\bakalarka\god-game.git\GodGame new\Assets\Scripts\Functions\ToggleOnPlayer.cs                                                    | C#        |         15 |          0 |          4 |         19 |
+| g:\Radsi_knihu\bakalarka\god-game.git\GodGame new\Assets\Scripts\Inventories\ResourceTypesInventory.cs                                          | C#        |          8 |          0 |          2 |         10 |
+| g:\Radsi_knihu\bakalarka\god-game.git\GodGame new\Assets\Scripts\Managers\BuildManager.cs                                                       | C#        |         75 |          7 |         27 |        109 |
+| g:\Radsi_knihu\bakalarka\god-game.git\GodGame new\Assets\Scripts\Managers\DayTimeManager.cs                                                     | C#        |         69 |         11 |         20 |        100 |
+| g:\Radsi_knihu\bakalarka\god-game.git\GodGame new\Assets\Scripts\Managers\JobManager.cs                                                         | C#        |         39 |          1 |         10 |         50 |
+| g:\Radsi_knihu\bakalarka\god-game.git\GodGame new\Assets\Scripts\Managers\PlayerStatManager.cs                                                  | C#        |         45 |          2 |          9 |         56 |
+| g:\Radsi_knihu\bakalarka\god-game.git\GodGame new\Assets\Scripts\Managers\SpawnManager.cs                                                       | C#        |         44 |          2 |          9 |         55 |
+| g:\Radsi_knihu\bakalarka\god-game.git\GodGame new\Assets\Scripts\Managers\SpellManager.cs                                                       | C#        |         18 |          0 |          2 |         20 |
+| g:\Radsi_knihu\bakalarka\god-game.git\GodGame new\Assets\Scripts\Managers\VillagerCreateManager.cs                                              | C#        |         40 |          1 |         10 |         51 |
+| g:\Radsi_knihu\bakalarka\god-game.git\GodGame new\Assets\Scripts\Managers\WorldManager.cs                                                       | C#        |         44 |          0 |          8 |         52 |
+| g:\Radsi_knihu\bakalarka\god-game.git\GodGame new\Assets\Scripts\Spells\FireBall.cs                                                             | C#        |         21 |          0 |          6 |         27 |
+| g:\Radsi_knihu\bakalarka\god-game.git\GodGame new\Assets\Scripts\Spells\RecoverSpell.cs                                                         | C#        |         20 |          0 |          7 |         27 |
+| g:\Radsi_knihu\bakalarka\god-game.git\GodGame new\Assets\Scripts\Spells\WaterBall.cs                                                            | C#        |         21 |          0 |          7 |         28 |
+| g:\Radsi_knihu\bakalarka\god-game.git\GodGame new\Assets\Scripts\Systems\FSM\IStateManager.cs                                                   | C#        |         11 |          0 |          2 |         13 |
+| g:\Radsi_knihu\bakalarka\god-game.git\GodGame new\Assets\Scripts\Systems\FSM\StateBase.cs                                                       | C#        |          6 |          1 |          0 |          7 |
+| g:\Radsi_knihu\bakalarka\god-game.git\GodGame new\Assets\Scripts\Systems\FSM\StateManagerBase.cs                                                | C#        |         43 |          3 |          9 |         55 |
+| g:\Radsi_knihu\bakalarka\god-game.git\GodGame new\Assets\Scripts\Systems\FSM\StateManagers\Eat\EatManager.cs                                    | C#        |         41 |          1 |          7 |         49 |
+| g:\Radsi_knihu\bakalarka\god-game.git\GodGame new\Assets\Scripts\Systems\FSM\StateManagers\Eat\States\Eat_EatFood.cs                            | C#        |         38 |          1 |          4 |         43 |
+| g:\Radsi_knihu\bakalarka\god-game.git\GodGame new\Assets\Scripts\Systems\FSM\StateManagers\Eat\States\Eat_FoodEaten.cs                          | C#        |         16 |          1 |          4 |         21 |
+| g:\Radsi_knihu\bakalarka\god-game.git\GodGame new\Assets\Scripts\Systems\FSM\StateManagers\Eat\States\Eat_GoToCanteen.cs                        | C#        |         28 |          7 |          5 |         40 |
+| g:\Radsi_knihu\bakalarka\god-game.git\GodGame new\Assets\Scripts\Systems\FSM\StateManagers\GetResource\GetFoodManagerNew.cs                     | C#        |         22 |          0 |          4 |         26 |
+| g:\Radsi_knihu\bakalarka\god-game.git\GodGame new\Assets\Scripts\Systems\FSM\StateManagers\GetResource\GetResourceManager.cs                    | C#        |         48 |          2 |          6 |         56 |
+| g:\Radsi_knihu\bakalarka\god-game.git\GodGame new\Assets\Scripts\Systems\FSM\StateManagers\GetResource\GetStoneManagerNew.cs                    | C#        |         20 |          0 |          5 |         25 |
+| g:\Radsi_knihu\bakalarka\god-game.git\GodGame new\Assets\Scripts\Systems\FSM\StateManagers\GetResource\GetWoodManagerNew.cs                     | C#        |         20 |          0 |          4 |         24 |
+| g:\Radsi_knihu\bakalarka\god-game.git\GodGame new\Assets\Scripts\Systems\FSM\StateManagers\GetResource\States\GetResource_DeliverResource.cs    | C#        |         42 |          3 |          5 |         50 |
+| g:\Radsi_knihu\bakalarka\god-game.git\GodGame new\Assets\Scripts\Systems\FSM\StateManagers\GetResource\States\GetResource_GoToAResource.cs      | C#        |         39 |          7 |          6 |         52 |
+| g:\Radsi_knihu\bakalarka\god-game.git\GodGame new\Assets\Scripts\Systems\FSM\StateManagers\GetResource\States\GetResource_HarvestResource.cs    | C#        |         45 |         10 |          6 |         61 |
+| g:\Radsi_knihu\bakalarka\god-game.git\GodGame new\Assets\Scripts\Systems\FSM\StateManagers\GoToSafety\GoToSafetyManager.cs                      | C#        |         15 |          0 |          3 |         18 |
+| g:\Radsi_knihu\bakalarka\god-game.git\GodGame new\Assets\Scripts\Systems\FSM\StateManagers\GoToSafety\States\GoToSafety_GetCover.cs             | C#        |         28 |          0 |          6 |         34 |
+| g:\Radsi_knihu\bakalarka\god-game.git\GodGame new\Assets\Scripts\Systems\FSM\StateManagers\GoToSafety\States\GoToSafety_StayInCover.cs          | C#        |         11 |          0 |          4 |         15 |
+| g:\Radsi_knihu\bakalarka\god-game.git\GodGame new\Assets\Scripts\Systems\FlyCam.cs                                                              | C#        |         71 |         10 |         10 |         91 |
+| g:\Radsi_knihu\bakalarka\god-game.git\GodGame new\Assets\Scripts\Systems\GOAP\Actions\ActionEat.cs                                              | C#        |         29 |          1 |          7 |         37 |
+| g:\Radsi_knihu\bakalarka\god-game.git\GodGame new\Assets\Scripts\Systems\GOAP\Actions\ActionGetFood.cs                                          | C#        |         29 |          1 |          7 |         37 |
+| g:\Radsi_knihu\bakalarka\god-game.git\GodGame new\Assets\Scripts\Systems\GOAP\Actions\ActionGetStone.cs                                         | C#        |         29 |          1 |          7 |         37 |
+| g:\Radsi_knihu\bakalarka\god-game.git\GodGame new\Assets\Scripts\Systems\GOAP\Actions\ActionGetWood.cs                                          | C#        |         29 |          1 |          7 |         37 |
+| g:\Radsi_knihu\bakalarka\god-game.git\GodGame new\Assets\Scripts\Systems\GOAP\Actions\ActionGoToSafety.cs                                       | C#        |         29 |          1 |          5 |         35 |
+| g:\Radsi_knihu\bakalarka\god-game.git\GodGame new\Assets\Scripts\Systems\GOAP\Actions\ActionHaveFreeTime.cs                                     | C#        |         20 |          1 |          6 |         27 |
+| g:\Radsi_knihu\bakalarka\god-game.git\GodGame new\Assets\Scripts\Systems\GOAP\Agents\Grown.cs                                                   | C#        |        100 |          8 |         23 |        131 |
+| g:\Radsi_knihu\bakalarka\god-game.git\GodGame new\Assets\Scripts\Systems\GOAP\Agents\Person.cs                                                  | C#        |         29 |          5 |          6 |         40 |
+| g:\Radsi_knihu\bakalarka\god-game.git\GodGame new\Assets\Scripts\Systems\GOAP\GActionBase.cs                                                    | C#        |         32 |          5 |          9 |         46 |
+| g:\Radsi_knihu\bakalarka\god-game.git\GodGame new\Assets\Scripts\Systems\GOAP\GAgentBase.cs                                                     | C#        |         75 |          7 |         13 |         95 |
+| g:\Radsi_knihu\bakalarka\god-game.git\GodGame new\Assets\Scripts\Systems\GOAP\GGoalBase.cs                                                      | C#        |         46 |          7 |         13 |         66 |
+| g:\Radsi_knihu\bakalarka\god-game.git\GodGame new\Assets\Scripts\Systems\GOAP\GPlanner.cs                                                       | C#        |         91 |         13 |         18 |        122 |
+| g:\Radsi_knihu\bakalarka\god-game.git\GodGame new\Assets\Scripts\Systems\GOAP\Goals\GoalEat.cs                                                  | C#        |         21 |          0 |          5 |         26 |
+| g:\Radsi_knihu\bakalarka\god-game.git\GodGame new\Assets\Scripts\Systems\GOAP\Goals\GoalGetFood.cs                                              | C#        |         17 |          2 |          3 |         22 |
+| g:\Radsi_knihu\bakalarka\god-game.git\GodGame new\Assets\Scripts\Systems\GOAP\Goals\GoalGetStone.cs                                             | C#        |         17 |          2 |          3 |         22 |
+| g:\Radsi_knihu\bakalarka\god-game.git\GodGame new\Assets\Scripts\Systems\GOAP\Goals\GoalGetWood.cs                                              | C#        |         17 |          2 |          2 |         21 |
+| g:\Radsi_knihu\bakalarka\god-game.git\GodGame new\Assets\Scripts\Systems\GOAP\Goals\GoalGoToSafety.cs                                           | C#        |         14 |          0 |          3 |         17 |
+| g:\Radsi_knihu\bakalarka\god-game.git\GodGame new\Assets\Scripts\Systems\GOAP\Goals\GoalHaveFreeTime.cs                                         | C#        |         14 |          0 |          3 |         17 |
+| g:\Radsi_knihu\bakalarka\god-game.git\GodGame new\Assets\Scripts\Systems\GOAP\WorldStates.cs                                                    | C#        |          8 |          0 |          2 |         10 |
+| g:\Radsi_knihu\bakalarka\god-game.git\GodGame new\Assets\Scripts\Systems\Inventory.cs                                                           | C#        |        116 |         14 |         26 |        156 |
+| g:\Radsi_knihu\bakalarka\god-game.git\GodGame new\Assets\Scripts\Systems\UnitySerializedDictionary.cs                                           | C#        |         26 |          0 |          4 |         30 |
+| g:\Radsi_knihu\bakalarka\god-game.git\GodGame new\Assets\Scripts\Systems\World.cs                                                               | C#        |         94 |          3 |         12 |        109 |
+| g:\Radsi_knihu\bakalarka\god-game.git\GodGame new\Assets\Scripts\VR\AgentVRInteractibleHandler.cs                                               | C#        |         47 |          1 |         14 |         62 |
+| g:\Radsi_knihu\bakalarka\god-game.git\GodGame new\Assets\Scripts\VR\HoldPressureHandler.cs                                                      | C#        |         86 |          5 |         15 |        106 |
+| g:\Radsi_knihu\bakalarka\god-game.git\GodGame new\Assets\Scripts\VR\OnButtonPress.cs                                                            | C#        |         67 |          5 |         15 |         87 |
+| g:\Radsi_knihu\bakalarka\god-game.git\GodGame new\Assets\Scripts\VR\VRInteractionHandler.cs                                                     | C#        |         19 |          6 |          9 |         34 |
+| g:\Radsi_knihu\bakalarka\god-game.git\GodGame new\Assets\TextMesh Pro\Shaders\TMP_Bitmap-Custom-Atlas.shader                                    | ShaderLab |        109 |          2 |         33 |        144 |
+| g:\Radsi_knihu\bakalarka\god-game.git\GodGame new\Assets\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader                                          | ShaderLab |        112 |          3 |         31 |        146 |
+| g:\Radsi_knihu\bakalarka\god-game.git\GodGame new\Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader                                                 | ShaderLab |        109 |          2 |         33 |        144 |
+| g:\Radsi_knihu\bakalarka\god-game.git\GodGame new\Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader                                            | ShaderLab |        243 |          4 |         71 |        318 |
+| g:\Radsi_knihu\bakalarka\god-game.git\GodGame new\Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader                                                | ShaderLab |        241 |          4 |         66 |        311 |
+| g:\Radsi_knihu\bakalarka\god-game.git\GodGame new\Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader                                     | ShaderLab |        188 |         10 |         50 |        248 |
+| g:\Radsi_knihu\bakalarka\god-game.git\GodGame new\Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader                                     | ShaderLab |        183 |          8 |         50 |        241 |
+| g:\Radsi_knihu\bakalarka\god-game.git\GodGame new\Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile SSD.shader                                         | ShaderLab |         82 |          4 |         21 |        107 |
+| g:\Radsi_knihu\bakalarka\god-game.git\GodGame new\Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile.shader                                             | ShaderLab |        183 |          8 |         50 |        241 |
+| g:\Radsi_knihu\bakalarka\god-game.git\GodGame new\Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader                                     | ShaderLab |        103 |          8 |         28 |        139 |
+| g:\Radsi_knihu\bakalarka\god-game.git\GodGame new\Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader                                            | ShaderLab |        122 |          4 |         33 |        159 |
+| g:\Radsi_knihu\bakalarka\god-game.git\GodGame new\Assets\TextMesh Pro\Shaders\TMP_SDF.shader                                                    | ShaderLab |        243 |          4 |         71 |        318 |
+| g:\Radsi_knihu\bakalarka\god-game.git\GodGame new\Assets\TextMesh Pro\Shaders\TMP_Sprite.shader                                                 | ShaderLab |         97 |          0 |         20 |        117 |
+| g:\Radsi_knihu\bakalarka\god-game.git\GodGame new\Assets\TextMesh Pro\Shaders\TMPro.cginc                                                       | HLSL      |         63 |          2 |         20 |         85 |
+| g:\Radsi_knihu\bakalarka\god-game.git\GodGame new\Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc                                                | HLSL      |        122 |          2 |         34 |        158 |
+| g:\Radsi_knihu\bakalarka\god-game.git\GodGame new\Assets\TextMesh Pro\Shaders\TMPro_Properties.cginc                                            | HLSL      |         62 |         10 |         14 |         86 |
+| g:\Radsi_knihu\bakalarka\god-game.git\GodGame new\Assets\TextMesh Pro\Shaders\TMPro_Surface.cginc                                               | HLSL      |         76 |          7 |         19 |        102 |
+| g:\Radsi_knihu\bakalarka\god-game.git\GodGame new\Assets\TextMesh Pro\Sprites\EmojiOne.json                                                     | JSON      |        155 |          0 |          2 |        157 |
+| g:\Radsi_knihu\bakalarka\god-game.git\GodGame new\Assets\TutorialInfo\Scripts\Editor\ReadmeEditor.cs                                            | C#        |        126 |          1 |         32 |        159 |
+| g:\Radsi_knihu\bakalarka\god-game.git\GodGame new\Assets\TutorialInfo\Scripts\Readme.cs                                                         | C#        |         12 |          0 |          3 |         15 |
+| g:\Radsi_knihu\bakalarka\god-game.git\GodGame new\Assets\UpdateSliderValue.cs                                                                   | C#        |         12 |          0 |          4 |         16 |
+| g:\Radsi_knihu\bakalarka\god-game.git\GodGame new\Assets\UpdateText.cs                                                                          | C#        |         26 |          0 |         12 |         38 |
+| Total                                                                                                                                           |           |      6,677 |        406 |      1,572 |      8,655 |
++-------------------------------------------------------------------------------------------------------------------------------------------------+-----------+------------+------------+------------+------------+

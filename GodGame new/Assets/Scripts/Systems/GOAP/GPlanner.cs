@@ -111,8 +111,8 @@ public class GPlanner : MonoBehaviour
     }
 
     private void OnDisable() {
-        ActiveGoal!.OnDeactivated();
-        ActiveAction!.OnDeactivated();
+        ActiveGoal?.OnDeactivated();
+        ActiveAction?.OnDeactivated();
 
         ActiveGoal = null;
         ActiveAction = null;

@@ -10,6 +10,7 @@ public sealed class World {
     private static readonly World _instance = new World();
     public List<Warehouse> warehouses { get; private set; } = new List<Warehouse>();
     public List<Canteen> canteens { get; private set; } = new List<Canteen>();
+    public List<Tent> tents { get; private set; } = new List<Tent>();
     public List<TreeResource> trees { get; private set; } = new List<TreeResource>();
     public List<StoneResource> stones { get; private set; } = new List<StoneResource>();
     public List<BerriesResource> berries { get; private set; } = new List<BerriesResource>();
@@ -55,6 +56,8 @@ public sealed class World {
             return stones.FindAll(x => x.FreeSpots > 0).Cast<T>().ToList();
         else if(typeof(T).Equals(typeof(BerriesResource)))
             return berries.FindAll(x => x.FreeSpots > 0).Cast<T>().ToList();
+        else if(typeof(T).Equals(typeof(Tent)))
+            return tents.FindAll(x => x.FreeSpots > 0).Cast<T>().ToList();
         else 
             return new List<T>();  
     }
@@ -72,6 +75,8 @@ public sealed class World {
             canteens.Add((Canteen)instance);
         else if(instance is BerriesResource)
             berries.Add((BerriesResource)instance);
+        else if(instance is Tent)
+            tents.Add((Tent)instance);
     }
 
     public void RemoveResourceInstance(AgentInteractibleBase instance){
@@ -85,6 +90,8 @@ public sealed class World {
             canteens.Remove((Canteen)instance);
         else if(instance is BerriesResource)
             berries.Remove((BerriesResource)instance);
+        else if(instance is Tent)
+            tents.Remove((Tent)instance);
     }
 
     public void ChangeTimeOfDay(TimesOfDay timeOfDay)

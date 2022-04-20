@@ -5,7 +5,7 @@ using UnityEngine.Events;
 
 public abstract class FireableObject : MonoBehaviour
 {
-    [SerializeField] GameObject _firePrefab;
+    [SerializeField] GameObject _fireParticlePrefab;
     [SerializeField] GameObject _fireModelSpawnPoint;
     [SerializeField] float igniteTreshold = 100f;
     [SerializeField] float temperatureDecreaseRate = 20f;
@@ -81,7 +81,7 @@ public abstract class FireableObject : MonoBehaviour
 
     protected void CrateFireModel()
     {
-        Instantiate(_firePrefab, _fireModelSpawnPoint.transform.position, _firePrefab.transform.rotation, _fireModelSpawnPoint.transform);
+        Instantiate(_fireParticlePrefab, _fireModelSpawnPoint.transform.position, _fireParticlePrefab.transform.rotation, _fireModelSpawnPoint.transform);
     }
 
     protected void DestroyFireModel()
@@ -96,12 +96,6 @@ public abstract class FireableObject : MonoBehaviour
     {
         _temperature = igniteTreshold;
         isOnFire = true;
-    }
-
-    public void PutDownFire()
-    {
-        isOnFire = false;
-        _temperature = 0;
     }
 
     void Update() {

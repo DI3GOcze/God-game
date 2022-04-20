@@ -303,7 +303,6 @@ GameObject:
   - component: {fileID: 6576069699063322491}
   - component: {fileID: 3547182993223857208}
   - component: {fileID: 3765248146690296321}
-  - component: {fileID: 7095237935050877645}
   m_Layer: 0
   m_Name: Right eye
   m_TagString: Untagged
@@ -374,19 +373,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &7095237935050877645
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1221589236860367671}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2259925963746454399
 GameObject:
   m_ObjectHideFlags: 0
@@ -539,7 +525,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &8701467934764032650
 RectTransform:
   m_ObjectHideFlags: 0
@@ -854,10 +840,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.5
+  m_Radius: 0.50000006
   m_Height: 2
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: -0.00000023841858, y: 0, z: 0}
 --- !u!1 &3949600266599884587
 GameObject:
   m_ObjectHideFlags: 0
@@ -1018,6 +1004,8 @@ GameObject:
   - component: {fileID: -552575775669119657}
   - component: {fileID: 4299820199554005840}
   - component: {fileID: 9000083249495632757}
+  - component: {fileID: -2589621277806578242}
+  - component: {fileID: -8485527586012256995}
   m_Layer: 0
   m_Name: Villager
   m_TagString: Untagged
@@ -1439,7 +1427,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98f9c1e612b115e4b8406e98fd8482bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _firePrefab: {fileID: 161698, guid: f5f21674805dd1a42ab29f3217b1d0d7, type: 3}
+  _fireParticlePrefab: {fileID: 0}
   _fireModelSpawnPoint: {fileID: 6586124375352092894}
   igniteTreshold: 100
   temperatureDecreaseRate: 30
@@ -1569,6 +1557,30 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 41ee544895df85f4197e8b7653e6f04d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-2589621277806578242
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4279744668356730647}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 764e325ab28b69341b8be43b3681fde2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-8485527586012256995
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4279744668356730647}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0eb63a20208b47f4085cfa2b89a25c6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &4826350124176617038
@@ -3061,7 +3073,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5115894574800176888, guid: a9ebb4e0a1b6c4848a4cab91e49e1413, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5599275807171173442, guid: a9ebb4e0a1b6c4848a4cab91e49e1413, type: 3}
       propertyPath: m_RootOrder

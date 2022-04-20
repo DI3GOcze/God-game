@@ -12,8 +12,8 @@ public class FireGridCell : MonoBehaviour
     public float startingHealth; 
     [SerializeField] float _health;
     public float burnedThreshold;
-    public delegate void IgnitedAction();
-    public event IgnitedAction OnIgnited;    
+    public delegate void CellAction();
+    public event CellAction OnIgnited;    
     [SerializeField] bool _isOnFire = false;
     public bool isOnFire 
     {
@@ -52,7 +52,7 @@ public class FireGridCell : MonoBehaviour
     }
     
     public delegate void BurnedAction();
-    public event IgnitedAction OnBurned;
+    public event CellAction OnBurned;
     [SerializeField] bool _isBurned = false;
     public bool isBurned
     {
@@ -87,7 +87,6 @@ public class FireGridCell : MonoBehaviour
         _sensor = GetComponent<FireSensor>();
         _objectsInCell = new List<FireableObject>();
 
-        _sensor.OnClicked += SetOnFire;
         _sensor.OnObjectEntered += AddFireableObject;
         _sensor.OnObjectExited += RemoveFireableObject;
     }

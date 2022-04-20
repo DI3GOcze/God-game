@@ -4,14 +4,9 @@ using UnityEngine;
 
 public class FireSensor : MonoBehaviour
 {
-    public delegate void ClickAction();
-    public event ClickAction OnClicked;
-
-    public delegate void ObjectEnteredAction(FireableObject fireableObject);
-    public event ObjectEnteredAction OnObjectEntered;
-
-    public delegate void ObjectExiteddAction(FireableObject fireableObject);
-    public event ObjectExiteddAction OnObjectExited;
+    public delegate void SensorObjectAction(FireableObject fireableObject);
+    public event SensorObjectAction OnObjectEntered;
+    public event SensorObjectAction OnObjectExited;
     
     private void OnTriggerEnter(Collider other) {       
         if(other.gameObject.TryGetComponent<FireableObject>(out var fireableObject))
@@ -25,9 +20,5 @@ public class FireSensor : MonoBehaviour
         {
             OnObjectExited?.Invoke(fireableObject);
         }
-    }
-
-    private void OnMouseDown() {
-        OnClicked?.Invoke();
     }
 }

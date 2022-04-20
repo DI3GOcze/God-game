@@ -15,7 +15,7 @@ public abstract class AgentInteractibleBase : MonoBehaviour
     [SerializeField] public ResourceTypesInventory Resources;       
     // This cannot be changed dynamicly
     public int MaxAgantCapacity  { get; protected set; } = 1;
-    protected List<GameObject> AssignedAgents;
+    [SerializeField] protected List<GameObject> AssignedAgents;
     protected virtual void Awake()
     {
         AssignedAgents = new List<GameObject>();

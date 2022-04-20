@@ -9,7 +9,7 @@ public class FireableObjectResource : FireableObject
     protected override void Start()
     {
         base.Start();
-        resource.OnDepleted += PutDownFire;
+        resource.OnDepleted += CoolDownTemperature;
     }
 
     public override void TakeDamage(float damage)

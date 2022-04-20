@@ -52,10 +52,10 @@ public class FirePropagationManager : MonoBehaviour
 
         _grid = new FireGridCell[gridHeight, gridWidth];
         CreateFireGrid();
-        StartCoroutine(Test());
+        StartCoroutine(SimulateFire());
     }
 
-    IEnumerator Test()
+    IEnumerator SimulateFire()
     {
         int counter = 0;
 
