@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class Warehouse : AgentInteractibleBase
+public class Warehouse : BuildingBase
 {
     public static ResourceTypesInventory warehouseInvetory;
     protected override void Awake()

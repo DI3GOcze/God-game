@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: -4641526249033812867}
   - component: {fileID: 5575279085839878776}
   - component: {fileID: -4570065665017596811}
+  - component: {fileID: 860821083952653585}
   m_Layer: 0
   m_Name: Tent
   m_TagString: Untagged
@@ -31,7 +32,8 @@ Transform:
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 8831207016862357080}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -105,6 +107,7 @@ MonoBehaviour:
     Items:
       _keyData: 
       _valueData: 
+  AssignedAgents: []
 --- !u!64 &5575279085839878776
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -135,3 +138,56 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: -0.15100001, y: 2.2050002, z: -0.272}
   m_TimeToStationary: 0.5
+--- !u!114 &860821083952653585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1275909538635612}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61f3c1075dfa1ed4f8a2b43785e2712a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _fireParticlePrefab: {fileID: 161698, guid: f5f21674805dd1a42ab29f3217b1d0d7, type: 3}
+  _fireModelSpawnPoint: {fileID: 5680823558613866159}
+  igniteTreshold: 100
+  temperatureDecreaseRate: 20
+  temperatureIncreaseRate: 40
+  _temperature: 0
+  onFireDamage: 5
+  isDead: 0
+  isInIgnitedCells: 0
+  fireHealth: 100
+  healthRegenerationRate: 2
+--- !u!1 &5680823558613866159
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8831207016862357080}
+  m_Layer: 0
+  m_Name: FireParent
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8831207016862357080
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5680823558613866159}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 3.17, z: 0}
+  m_LocalScale: {x: 5, y: 5, z: 5}
+  m_Children: []
+  m_Father: {fileID: 4422725698349158}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

@@ -17,7 +17,10 @@ public class Sleep_Sleep : StateBase
     {
         base.EnterState();
         // Make agent invisible and deactivate his colliders
-        DisableAgent();
+        // only if he is sleeping in tent
+        // this simulates going inside
+        if(Manager.targetTent != null)
+            DisableAgent();
     }
 
     public override void ExitState()

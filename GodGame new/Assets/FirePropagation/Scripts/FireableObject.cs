@@ -15,7 +15,7 @@ public abstract class FireableObject : MonoBehaviour
     /// Damage taken per second when on fire
     /// </summary>
     public float onFireDamage = 5;
-    private bool _isOnFire = false;
+    [SerializeField] private bool _isOnFire = false;
     public bool isOnFire 
     {
         get { return _isOnFire; }
@@ -98,7 +98,7 @@ public abstract class FireableObject : MonoBehaviour
         isOnFire = true;
     }
 
-    void Update() {
+    virtual protected void Update() {
         
         // If the object is on fire, it shloud take damage
         if(isOnFire)
@@ -112,7 +112,5 @@ public abstract class FireableObject : MonoBehaviour
             IncreaseTemperature(temperatureIncreaseRate * Time.deltaTime);
         else
             DecreaseTemperature(temperatureDecreaseRate * Time.deltaTime);
-        
-
     }
 }

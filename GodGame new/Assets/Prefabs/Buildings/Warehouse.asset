@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buildingPrefab: {fileID: 5328460204254849363, guid: 32882705ed625a6448cac93183de4349, type: 3}
   buildingGhost: {fileID: 5328460204254849363, guid: ea65ff5b885a658449883813e4893e1b, type: 3}
-  woodCost: 50
-  stoneCost: 100
+  woodCost: 1
+  stoneCost: 1

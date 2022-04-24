@@ -590,6 +590,7 @@ MonoBehaviour:
     Items:
       _keyData: 
       _valueData: 
+  AssignedAgents: []
   isDepleted: 0
   harvestingTime: 4
   harvestingAmount: 20
@@ -610,7 +611,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15be337739b6eec44862d7744788d2af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _firePrefab: {fileID: 161698, guid: f5f21674805dd1a42ab29f3217b1d0d7, type: 3}
+  _fireParticlePrefab: {fileID: 161698, guid: f5f21674805dd1a42ab29f3217b1d0d7, type: 3}
   _fireModelSpawnPoint: {fileID: 7717107934391659329}
   igniteTreshold: 100
   temperatureDecreaseRate: 20

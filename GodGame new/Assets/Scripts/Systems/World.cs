@@ -14,6 +14,7 @@ public sealed class World {
     public List<TreeResource> trees { get; private set; } = new List<TreeResource>();
     public List<StoneResource> stones { get; private set; } = new List<StoneResource>();
     public List<BerriesResource> berries { get; private set; } = new List<BerriesResource>();
+    public List<CampFire> campFires { get; private set; } = new List<CampFire>();
     public List<Grown> grownList { get; private set; } = new List<Grown>();
     public HashSet<WorldStates> worldState { get; private set; } = new HashSet<WorldStates>();
     public TimesOfDay timeOfDay {get; private set; } = TimesOfDay.Morning;

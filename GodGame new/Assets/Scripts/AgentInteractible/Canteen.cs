@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class Canteen : AgentInteractibleBase
+public class Canteen : BuildingBase
 {
     protected override void Start() {
         base.Start();

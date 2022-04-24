@@ -22,19 +22,19 @@ public class SpawnManager : MonoBehaviour
         for (int i = 0; i < numberOfWoodCuters; i++)
         {
             GameObject woodCutter = Instantiate(VillagerPrefab, VillagerPrefab.transform.position + GenerateRandomOffset(50, 50), VillagerPrefab.transform.rotation, Parent.transform);
-            woodCutter.GetComponent<Grown>().ChangeProfession(Professions.Woodcuter);
+            woodCutter.GetComponent<Grown>().profession = Professions.Woodcuter;
         }
 
         for (int i = 0; i < numberOfStoneDiggers; i++)
         {
             GameObject miner = Instantiate(VillagerPrefab, VillagerPrefab.transform.position + GenerateRandomOffset(50, 50), VillagerPrefab.transform.rotation, Parent.transform);
-            miner.GetComponent<Grown>().ChangeProfession(Professions.Miner);
+            miner.GetComponent<Grown>().profession = Professions.Miner;
         }
 
         for (int i = 0; i < numberOfFoodGatheres; i++)
         {
             GameObject foodGatherer = Instantiate(VillagerPrefab, VillagerPrefab.transform.position + GenerateRandomOffset(50, 50), VillagerPrefab.transform.rotation, Parent.transform);
-            foodGatherer.GetComponent<Grown>().ChangeProfession(Professions.FoodGatherer);  
+            foodGatherer.GetComponent<Grown>().profession = Professions.FoodGatherer;
         }
         yield return null;
     }

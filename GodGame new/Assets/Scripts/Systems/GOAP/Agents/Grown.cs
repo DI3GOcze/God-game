@@ -12,7 +12,7 @@ public class Grown : Person
 
     [SerializeField] private GPlanner _planner;
     
-    [SerializeField] Professions _profession = Professions.Unemployed;
+    public Professions profession = Professions.Unemployed;
     // ..
 
     protected override void Start() {
@@ -20,7 +20,7 @@ public class Grown : Person
         World.Instance.grownList.Add(this);
 
         // Add components base on his selected component
-        AddProfession(_profession);
+        AddProfession(profession);
         _planner.UpdateGoalsAndActions();
     }
 
@@ -40,12 +40,12 @@ public class Grown : Person
 
     public void ChangeProfession(Professions profession)
     {
-        // If proffesion changed
-        if(_profession != profession)
+        // If profession changed
+        if(this.profession != profession)
         {
             RemoveProfession();
             AddProfession(profession);
-            _profession = profession;
+            this.profession = profession;
             _planner.UpdateGoalsAndActions();
         } 
     }
@@ -62,7 +62,6 @@ public class Grown : Person
         switch(profession)
         {
             case Professions.Woodcuter:
-
                 gameObject.AddComponent<GoalGetWood>();
                 gameObject.AddComponent<ActionGetWood>();
                 break;
@@ -88,7 +87,7 @@ public class Grown : Person
         List<GGoalBase> goalsToDestroy = new List<GGoalBase>();
         List<GActionBase> actionsToDestroy = new List<GActionBase>();
         
-        switch (_profession)
+        switch (profession)
         {
             case Professions.Woodcuter:
                 goalsToDestroy.Add(GetComponent<GoalGetWood>());
