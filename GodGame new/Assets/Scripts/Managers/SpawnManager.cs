@@ -7,6 +7,7 @@ public class SpawnManager : MonoBehaviour
     [SerializeField] int numberOfWoodCuters = 10;
     [SerializeField] int numberOfStoneDiggers = 10;
     [SerializeField] int numberOfFoodGatheres = 10;
+    [SerializeField] int numberOfUnemployed = 10;
     [SerializeField] GameObject VillagerPrefab;
     [SerializeField] GameObject Parent;
 
@@ -35,6 +36,11 @@ public class SpawnManager : MonoBehaviour
         {
             GameObject foodGatherer = Instantiate(VillagerPrefab, VillagerPrefab.transform.position + GenerateRandomOffset(50, 50), VillagerPrefab.transform.rotation, Parent.transform);
             foodGatherer.GetComponent<Grown>().profession = Professions.FoodGatherer;
+        }
+
+        for (int i = 0; i < numberOfUnemployed; i++)
+        {
+            GameObject foodGatherer = Instantiate(VillagerPrefab, VillagerPrefab.transform.position + GenerateRandomOffset(50, 50), VillagerPrefab.transform.rotation, Parent.transform);
         }
         yield return null;
     }

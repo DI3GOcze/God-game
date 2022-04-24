@@ -164,7 +164,7 @@ NavMeshObstacle:
   m_Shape: 1
   m_Extents: {x: 4.202, y: 5.089, z: 6.681}
   m_MoveThreshold: 0.1
-  m_Carve: 0
+  m_Carve: 1
   m_CarveOnlyStationary: 1
   m_Center: {x: 0.09200001, y: 3.8490002, z: -0.49}
   m_TimeToStationary: 0.5
@@ -187,7 +187,9 @@ MonoBehaviour:
   temperatureIncreaseRate: 40
   _temperature: 0
   onFireDamage: 5
+  _isOnFire: 0
   isDead: 0
   isInIgnitedCells: 0
+  maxFireHealth: 100
   fireHealth: 100
   healthRegenerationRate: 2

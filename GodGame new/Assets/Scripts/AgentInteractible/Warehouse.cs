@@ -5,16 +5,24 @@ using TMPro;
 
 public class Warehouse : BuildingBase
 {
-    public static ResourceTypesInventory warehouseInvetory;
+    private static ResourceTypesInventory _warehouseInvetory;
+    public static ResourceTypesInventory warehouseInvetory {
+        get 
+        {
+            if(_warehouseInvetory == null){
+                _warehouseInvetory = new ResourceTypesInventory();
+                warehouseInvetory.AddAmmountOrAddNewItem(ResourceTypes.WOOD, 200);
+                warehouseInvetory.AddAmmountOrAddNewItem(ResourceTypes.STONE, 100);
+            }
+            
+            return _warehouseInvetory;
+        }
+    }
+    
     protected override void Awake()
     {
         base.Awake();   
         MaxAgantCapacity = 10; 
-
-        // Skladiste maji spolecne uloziste
-        // Pokud toto uloziste jeste neni vytvoreno, vytvor ho
-        if (warehouseInvetory == null)
-            warehouseInvetory = new ResourceTypesInventory();
 
         // Prirazeni spolecneho uloziste pro skladiste
         Resources = warehouseInvetory;

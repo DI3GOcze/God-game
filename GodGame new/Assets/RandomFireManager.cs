@@ -23,9 +23,8 @@ public class RandomFireManager : MonoBehaviour
 
     void IgniteRandomObject()
     {
-        var objects = FindObjectsOfType<FireableObject>();
+        var objects = FindObjectsOfType<FireableObjectBuilding>();
         
-        Debug.Log("jdu na to");
         if (objects.Length == 0)
             return;
         

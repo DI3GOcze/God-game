@@ -16,8 +16,7 @@ public class ActionHaveFreeTime : GActionBase
     public float maxOneTripTime = 10f;
     public Transform target;
     public Vector3 wanderingOrigin;
-    public float timer;
-    private bool _isOnTrip = false;
+    public bool _isOnTrip = false;
     private Coroutine maxWanderingTimer;
 
     private void Start() {
@@ -27,7 +26,7 @@ public class ActionHaveFreeTime : GActionBase
     public override void OnActivated(GGoalBase linkedGoal)
     {
         base.OnActivated(linkedGoal);
-        timer = maxOneTripTime;
+        _isOnTrip = false;
     }
 
     public override void OnTick()
@@ -45,18 +44,25 @@ public class ActionHaveFreeTime : GActionBase
             
             _isOnTrip = true;
         }
-    } 
+    }
+
+    public override void OnDeactivated()
+    {
+        base.OnDeactivated();
+        if(maxWanderingTimer != null){
+            StopCoroutine(maxWanderingTimer);
+        }
+    }
 
     public Vector3 RandomPointInWaderingZone() {
-        Vector3 randomDirection = Random.insideUnitSphere * wanderFromOriginRadius;
- 
-        randomDirection += wanderingOrigin;
+        Vector2 randomPointInRadius = Random.insideUnitCircle * wanderFromOriginRadius;
+        Vector3 pointInWanderingZone = new Vector3(randomPointInRadius.x, 0, randomPointInRadius.y) + wanderingOrigin;
   
-        NavMesh.SamplePosition(randomDirection, out NavMeshHit navHit, 10f, -1);
+        if(NavMesh.SamplePosition(pointInWanderingZone, out NavMeshHit navHit, 10f, -1)){
+            return navHit.position;
+        }
         
-        Debug.Log(navHit.position); 
-
-        return navHit.position;
+        return Vector3.zero; 
     }
 
     IEnumerator MaxWanderingTimer()
@@ -64,5 +70,4 @@ public class ActionHaveFreeTime : GActionBase
         yield return new WaitForSeconds(maxOneTripTime);
         _isOnTrip = false;
     }
-
 }
