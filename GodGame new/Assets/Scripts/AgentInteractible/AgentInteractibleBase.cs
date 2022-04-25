@@ -68,36 +68,36 @@ public abstract class AgentInteractibleBase : MonoBehaviour
         return true;
     }
 
-    protected virtual void UpdateGUI()
-    {
-        if(ResourcePanel != null && Resources != null && Resources.Items != null)
-        {
-            string woodNum;
-            if(Resources.Items.ContainsKey(ResourceTypes.WOOD))
-                woodNum = Resources.Items[ResourceTypes.WOOD].ToString();
-            else
-                woodNum = "0";
+    // protected virtual void UpdateGUI()
+    // {
+    //     if(ResourcePanel != null && Resources != null && Resources.Items != null)
+    //     {
+    //         string woodNum;
+    //         if(Resources.Items.ContainsKey(ResourceTypes.WOOD))
+    //             woodNum = Resources.Items[ResourceTypes.WOOD].ToString();
+    //         else
+    //             woodNum = "0";
 
-            string stoneNum;
-            if(Resources.Items.ContainsKey(ResourceTypes.STONE))
-                stoneNum = Resources.Items[ResourceTypes.STONE].ToString();
-            else
-                stoneNum = "0";
+    //         string stoneNum;
+    //         if(Resources.Items.ContainsKey(ResourceTypes.STONE))
+    //             stoneNum = Resources.Items[ResourceTypes.STONE].ToString();
+    //         else
+    //             stoneNum = "0";
 
-            string foodNum = "0";
-            if(Resources.Items.ContainsKey(ResourceTypes.FOOD))
-                foodNum = Resources.Items[ResourceTypes.FOOD].ToString();
-            else
-                foodNum = "0";
+    //         string foodNum = "0";
+    //         if(Resources.Items.ContainsKey(ResourceTypes.FOOD))
+    //             foodNum = Resources.Items[ResourceTypes.FOOD].ToString();
+    //         else
+    //             foodNum = "0";
 
-            if(WoodText != null)
-                WoodText.text = "Wood " + woodNum;
+    //         if(WoodText != null)
+    //             WoodText.text = "Wood " + woodNum;
 
-            if(StoneText != null)
-                StoneText.text = "Stone " + stoneNum;
+    //         if(StoneText != null)
+    //             StoneText.text = "Stone " + stoneNum;
 
-            if(FoodText != null)
-                FoodText.text = "Food " + foodNum;
-        }            
-    }
+    //         if(FoodText != null)
+    //             FoodText.text = "Food " + foodNum;
+    //     }            
+    // }
 }

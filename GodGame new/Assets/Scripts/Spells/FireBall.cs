@@ -7,7 +7,16 @@ public class FireBall : MonoBehaviour
     public float effectArea;
     public GameObject fireExplosionPrefab;
 
+    public GameObject[] stonePrefabs;
+
     private void OnCollisionEnter(Collision other) {
+        
+        if(stonePrefabs.Length > 0 && other.contactCount > 1)
+        {
+            var randomPrefab = stonePrefabs[Random.Range(0, stonePrefabs.Length)];
+            Instantiate(randomPrefab, other.contacts[0].point, randomPrefab.transform.rotation);
+        }
+        
         var colliders =  Physics.OverlapSphere(transform.position, effectArea);
 
         foreach (var collider in colliders)

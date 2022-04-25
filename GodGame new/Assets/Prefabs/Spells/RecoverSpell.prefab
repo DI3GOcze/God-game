@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 2511560178299187486}
   - component: {fileID: 2511560178299187485}
   - component: {fileID: 2511560178299187484}
-  - component: {fileID: -1048352144340426799}
   - component: {fileID: -961255105385389417}
+  - component: {fileID: -1048352144340426799}
   m_Layer: 0
   m_Name: RecoverSpell
   m_TagString: Untagged
@@ -114,6 +114,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &-961255105385389417
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2511560178299187482}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 306f5c7f4d85eda40b51f7a44f384137, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  effectArea: 10
+  particlePrefab: {fileID: 7075040940365923278, guid: 27f3b4d33d4ad604d9eadc3a83c588b1, type: 3}
 --- !u!114 &-1048352144340426799
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -229,17 +243,3 @@ MonoBehaviour:
   m_ForceGravityOnDetach: 0
   m_RetainTransformParent: 1
   m_AttachPointCompatibilityMode: 0
---- !u!114 &-961255105385389417
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2511560178299187482}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 306f5c7f4d85eda40b51f7a44f384137, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  effectArea: 10
-  particlePrefab: {fileID: 7075040940365923278, guid: 27f3b4d33d4ad604d9eadc3a83c588b1, type: 3}

@@ -15,17 +15,14 @@ public class ActionHaveFreeTime : GActionBase
     public float wanderFromOriginRadius = 10f;
     public float maxOneTripTime = 10f;
     public Transform target;
-    public Vector3 wanderingOrigin;
-    public bool _isOnTrip = false;
-    private Coroutine maxWanderingTimer;
-
-    private void Start() {
-        wanderingOrigin = GameObject.Find("WanderingOrigin").transform.position;
-    }
+    private Vector3 _wanderingOrigin;
+    private bool _isOnTrip = false;
+    private Coroutine _maxWanderingTimer;
 
     public override void OnActivated(GGoalBase linkedGoal)
     {
         base.OnActivated(linkedGoal);
+        _wanderingOrigin = transform.position;
         _isOnTrip = false;
     }
 
@@ -34,10 +31,10 @@ public class ActionHaveFreeTime : GActionBase
         base.OnTick();
 
         if (!_isOnTrip || agent.ReachedDestination) {
-            if(maxWanderingTimer != null){
-                StopCoroutine(maxWanderingTimer);
+            if(_maxWanderingTimer != null){
+                StopCoroutine(_maxWanderingTimer);
             }
-            maxWanderingTimer = StartCoroutine(MaxWanderingTimer());
+            _maxWanderingTimer = StartCoroutine(MaxWanderingTimer());
             
             Vector3 newPos = RandomPointInWaderingZone();
             agent.GoToDestination(newPos);
@@ -49,14 +46,14 @@ public class ActionHaveFreeTime : GActionBase
     public override void OnDeactivated()
     {
         base.OnDeactivated();
-        if(maxWanderingTimer != null){
-            StopCoroutine(maxWanderingTimer);
+        if(_maxWanderingTimer != null){
+            StopCoroutine(_maxWanderingTimer);
         }
     }
 
     public Vector3 RandomPointInWaderingZone() {
         Vector2 randomPointInRadius = Random.insideUnitCircle * wanderFromOriginRadius;
-        Vector3 pointInWanderingZone = new Vector3(randomPointInRadius.x, 0, randomPointInRadius.y) + wanderingOrigin;
+        Vector3 pointInWanderingZone = new Vector3(randomPointInRadius.x, 0, randomPointInRadius.y) + _wanderingOrigin;
   
         if(NavMesh.SamplePosition(pointInWanderingZone, out NavMeshHit navHit, 10f, -1)){
             return navHit.position;

@@ -5,7 +5,7 @@ using UnityEngine;
 public class TreeResource : DepletableResource
 {
     public int startingWood = 150;
-
+    
     protected override void Awake()
     {
         base.Awake();

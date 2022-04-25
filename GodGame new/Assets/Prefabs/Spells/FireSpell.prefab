@@ -128,6 +128,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   effectArea: 5
   fireExplosionPrefab: {fileID: 169654, guid: 1dadf691cda82fa44a8a66d7dd374612, type: 3}
+  stonePrefabs:
+  - {fileID: 7232550335108330086, guid: 74888f7c22fb89942bb4001d2bdf6aee, type: 3}
+  - {fileID: 8122927757451299190, guid: be7ad4ca05a06104fba99dc57db31d7d, type: 3}
+  - {fileID: 656353908641439102, guid: d4b358efe13480f4687787e0f941c7dd, type: 3}
 --- !u!114 &-1048352144340426799
 MonoBehaviour:
   m_ObjectHideFlags: 0
