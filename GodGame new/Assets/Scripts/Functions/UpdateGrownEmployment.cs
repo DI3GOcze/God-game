@@ -16,7 +16,7 @@ public class UpdateGrownEmployment : MonoBehaviour
                 break;
 
             case Professions.FoodGatherer:
-                ProfessionText.text = "Food Hatherer";
+                ProfessionText.text = "Food Gatherer";
                 break;
 
             case Professions.Miner:

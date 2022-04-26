@@ -13,27 +13,35 @@ public class Eat_GoToCanteen : StateBase
         this.Manager = Manager;
     }
 
+    public override void EnterState()
+    {
+        base.EnterState();
+        
+    }
+
     public override void UpdateState()
     {
-        
         base.UpdateState();
-        // If no resource was found (or found resource was destroyed)
-        if(Manager.targetCanteen == null)
+        
+        if(Manager.targetFoodSource == null)
         {
-            // Find closest resource
+            // Find closest canteen
             AgentInteractibleBase[] freeCanteens = Manager.GetCanteens();     
-            Manager.targetCanteen = Manager.Agent.GetClosestObject<AgentInteractibleBase>(freeCanteens);
-            // If found, seize that resource and go to that resource
-            if(Manager.targetCanteen != null)
+            Manager.targetFoodSource = Manager.Agent.GetClosestObject<AgentInteractibleBase>(freeCanteens);
+            
+            // If no canteen was found, find closest food source
+            if(Manager.targetFoodSource == null)
             {
-                Manager.Agent.GoToDestination(Manager.targetCanteen.gameObject);
+                var foodSources = World.Instance.GetFreeResource<BerriesResource>().ToArray();
+                Manager.targetFoodSource = Manager.Agent.GetClosestObject<AgentInteractibleBase>(foodSources);
             }
-        } 
-        // If reached resource, start harvesting state
-        else if(Manager.Agent.ReachedDestination)
+
+            Manager.Agent.GoToDestination(Manager.targetFoodSource.gameObject);
+        }
+        
+        if(Manager.Agent.ReachedDestination)
         {
             Manager.SwitchState(Manager.eatFoodState);
-        }
-            
+        }     
     }
 }

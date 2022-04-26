@@ -5,7 +5,7 @@ using UnityEngine;
 public class Eat_EatFood : StateBase
 {
     EatManager Manager;
-    int FoodConsumption = 1;
+    int FoodConsumption = 5;
     public Eat_EatFood(EatManager Manager)
     {
         this.Manager = Manager;
@@ -14,8 +14,8 @@ public class Eat_EatFood : StateBase
     public override void EnterState()
     {
         base.EnterState();
-        // If canteen was destroyed or it does not have enough food, find new one
-        if(Manager.targetCanteen == null || Manager.targetCanteen.GetResource(ResourceTypes.FOOD, FoodConsumption) != FoodConsumption)
+        // If food source  was destroyed or it does not have enough food, find new one
+        if(Manager.targetFoodSource == null || Manager.targetFoodSource.GetResource(ResourceTypes.FOOD, FoodConsumption) != FoodConsumption)
         {
             Manager.SwitchState(Manager.goToCanteenState);
         }

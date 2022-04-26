@@ -8,7 +8,7 @@ public class EatManager : StateManagerBase
     public Eat_GoToCanteen goToCanteenState;
     public Eat_EatFood eatFoodState;
     public Eat_FoodEaten foodEatenState;
-    public AgentInteractibleBase targetCanteen;
+    public AgentInteractibleBase targetFoodSource;
     public AgentInteractibleBase[] GetCanteens() => World.Instance.GetFreeResource<Canteen>().FindAll(x => !x.IsEmpty()).ToArray();
     public bool eatingCompleted = false;
 
@@ -31,10 +31,10 @@ public class EatManager : StateManagerBase
     public override void ResetManager()
     {
         // Release seized canteen (Probably never used)
-        if(targetCanteen != null)
+        if(targetFoodSource != null)
         {
-            targetCanteen.ReleaseSpot(Agent.gameObject);
-            targetCanteen = null;
+            targetFoodSource.ReleaseSpot(Agent.gameObject);
+            targetFoodSource = null;
         }
         eatingCompleted = false;
     }

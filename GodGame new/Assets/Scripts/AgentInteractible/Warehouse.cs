@@ -11,8 +11,9 @@ public class Warehouse : BuildingBase
         {
             if(_warehouseInvetory == null){
                 _warehouseInvetory = new ResourceTypesInventory();
-                warehouseInvetory.AddAmmountOrAddNewItem(ResourceTypes.WOOD, 200);
-                warehouseInvetory.AddAmmountOrAddNewItem(ResourceTypes.STONE, 100);
+                warehouseInvetory.AddAmmountOrAddNewItem(ResourceTypes.WOOD, 500);
+                warehouseInvetory.AddAmmountOrAddNewItem(ResourceTypes.STONE, 500);
+                warehouseInvetory.AddAmmountOrAddNewItem(ResourceTypes.FOOD, 30);
             }
             
             return _warehouseInvetory;

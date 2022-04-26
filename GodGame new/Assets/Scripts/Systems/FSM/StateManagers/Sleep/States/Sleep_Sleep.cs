@@ -34,6 +34,7 @@ public class Sleep_Sleep : StateBase
     private void DisableAgent()
     {
         Manager.Agent.GetComponent<Rigidbody>().detectCollisions = false;
+        Manager.Agent.GetComponent<FireableObject>().enabled = false;
         
         foreach (var item in Manager.Agent.GetComponentsInChildren<Renderer>())
         {
@@ -49,6 +50,7 @@ public class Sleep_Sleep : StateBase
     private void EnableAgent()
     {
         Manager.Agent.GetComponent<Rigidbody>().detectCollisions = true;
+        Manager.Agent.GetComponent<FireableObject>().enabled = true;
 
         foreach (var item in Manager.Agent.GetComponentsInChildren<Renderer>())
         {

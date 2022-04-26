@@ -87,9 +87,9 @@ public class DayTimeManager : MonoBehaviour
             World.Instance.ChangeTimeOfDay(TimesOfDay.Morning);
         } else if (hours >= 10 && hours <= 17){
             World.Instance.ChangeTimeOfDay(TimesOfDay.Afternoon);
-        } else if (hours >= 18 && hours <= 22){
+        } else if (hours >= 18 && hours <= 21){
             World.Instance.ChangeTimeOfDay(TimesOfDay.Evening);
-        } else if (hours >= 23 && hours <= 24 || hours >= 0 && hours <= 5){
+        } else if (hours >= 22 && hours <= 24 || hours >= 0 && hours <= 5){
             World.Instance.ChangeTimeOfDay(TimesOfDay.Night);
         }
             

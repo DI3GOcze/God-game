@@ -32,7 +32,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7866986258304029754}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &863588008773378742
 MeshFilter:
@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   resource: {fileID: 7137009565087586020}
-  regenerationTime: 15
+  regenerationTime: 100
 --- !u!65 &6932691623298408795
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -178,7 +178,7 @@ Transform:
   m_Children:
   - {fileID: 1759059336333053907}
   m_Father: {fileID: 7866986258304029754}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &2777534853930332900
 MeshFilter:
@@ -267,7 +267,7 @@ MonoBehaviour:
   AssignedAgents: []
   isDepleted: 0
   harvestingTime: 4
-  harvestingAmount: 20
+  harvestingAmount: 5
   resourceType: 2
   depletedObject: {fileID: 4032712689231037951}
   resourceHealth: 10
@@ -310,12 +310,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   resource: {fileID: 7137009565087586020}
   resourceType: 2
-  playerResourceHarvestedAfterSeconds: 1
-  harvestingVibrationIntesity: 0.2
-  harvestedVibrationIntesity: 0.9
-  manaCostPerSecond: 20
+  playerResourceHarvestedAfterSeconds: 0.7
   leftHandInteractor: {fileID: 0}
   rightHandInteractor: {fileID: 0}
+  popupSpawnPoint: {fileID: 4466032244542217936}
 --- !u!114 &6046784033218163024
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -460,6 +458,36 @@ MonoBehaviour:
   m_OnDeactivate:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1 &4466032244542217936
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7308999524990207656}
+  m_Layer: 0
+  m_Name: Popup
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7308999524990207656
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4466032244542217936}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.91200006, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 7866986258304029754}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7870160981853817622
 GameObject:
   m_ObjectHideFlags: 0
@@ -487,6 +515,7 @@ Transform:
   m_LocalPosition: {x: -51.82677, y: 20.599472, z: -50.683807}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children:
+  - {fileID: 7308999524990207656}
   - {fileID: 8126033074681085024}
   - {fileID: 832022956386158184}
   m_Father: {fileID: 0}

@@ -133,6 +133,51 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!1 &585505758502569138
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9178751062986234262}
+  - component: {fileID: 5114789812006609336}
+  m_Layer: 11
+  m_Name: RayInteraction
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9178751062986234262
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 585505758502569138}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4279744668356730653}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &5114789812006609336
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 585505758502569138}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.58
+  m_Height: 1.96
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &956504357235964433
 GameObject:
   m_ObjectHideFlags: 0
@@ -319,7 +364,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1221589236860367671}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.582, z: 0.24}
+  m_LocalPosition: {x: 0, y: 0.45, z: 0.24}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children: []
   m_Father: {fileID: 4279744668356730653}
@@ -835,7 +880,6 @@ GameObject:
   - component: {fileID: 787656773821513355}
   - component: {fileID: 49871098806802317}
   - component: {fileID: 8100687253104095043}
-  - component: {fileID: 2601139223647825190}
   m_Layer: 0
   m_Name: Mouth
   m_TagString: Untagged
@@ -906,20 +950,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &2601139223647825190
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3752203840164078584}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.50000006
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: -0.00000023841858, y: 0, z: 0}
 --- !u!1 &3949600266599884587
 GameObject:
   m_ObjectHideFlags: 0
@@ -1109,6 +1139,7 @@ Transform:
   - {fileID: 5330354092459643057}
   - {fileID: 2458828723255944687}
   - {fileID: 8020918738908380803}
+  - {fileID: 9178751062986234262}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1177,12 +1208,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_InteractionManager: {fileID: 0}
-  m_Colliders: []
+  m_Colliders:
+  - {fileID: 928153609866297369}
+  - {fileID: 5114789812006609336}
   m_InteractionLayerMask:
     serializedVersion: 2
     m_Bits: 4294967295
   m_InteractionLayers:
-    m_Bits: 2
+    m_Bits: 1
   m_SelectMode: 0
   m_CustomReticle: {fileID: 0}
   m_FirstHoverEntered:
@@ -1252,7 +1285,7 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 1
+          m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 3895301933880000122}
         m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
@@ -1632,8 +1665,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ReachedDestination: 0
-  maxHunger: 100
-  HungerIncreasePerSecond: 0.2
+  maxHunger: 500
+  HungerIncreasePerSecond: 1
   hunger: 0
   health: 100
   strenght: 50
@@ -1726,8 +1759,6 @@ MonoBehaviour:
   wanderFromOriginRadius: 60
   maxOneTripTime: 10
   target: {fileID: 0}
-  wanderingOrigin: {x: 0, y: 0, z: 0}
-  _isOnTrip: 0
 --- !u!114 &-2589621277806578242
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3356,7 +3387,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6846324128863434901, guid: c8a6476c14973004885e96362109c797, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: c8a6476c14973004885e96362109c797, type: 3}
 --- !u!4 &5829225721315778825 stripped
 Transform:
@@ -3422,7 +3454,8 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 583245578635320906, guid: 1d0906b073b065a48ba21d7fc8b2a576, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1d0906b073b065a48ba21d7fc8b2a576, type: 3}
 --- !u!4 &3284910114040500258 stripped
 Transform:
@@ -3484,7 +3517,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 52.68
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1394542029756896520, guid: 8fa7f02f542be6d48a3675fe07e48925, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 8fa7f02f542be6d48a3675fe07e48925, type: 3}
 --- !u!4 &2718993241409431947 stripped
 Transform:
@@ -3562,7 +3596,8 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5979024328573933280, guid: a5f7a6008ac910d41a7e6474f8b90654, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: a5f7a6008ac910d41a7e6474f8b90654, type: 3}
 --- !u!4 &995426954614162632 stripped
 Transform:
@@ -3706,7 +3741,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -52.059
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3915837921593103423, guid: a9ebb4e0a1b6c4848a4cab91e49e1413, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: a9ebb4e0a1b6c4848a4cab91e49e1413, type: 3}
 --- !u!4 &4181547543593231371 stripped
 Transform:

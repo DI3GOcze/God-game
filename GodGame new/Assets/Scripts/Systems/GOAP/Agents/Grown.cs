@@ -47,6 +47,27 @@ public class Grown : Person
             AddProfession(profession);
             this.profession = profession;
             _planner.UpdateGoalsAndActions();
+            
+            switch(profession)
+            {
+                case Professions.Woodcuter:
+                    PopUpManager.instance.CreatePopUp(transform.position, "Woodcuter");
+                    break;
+
+                case Professions.FoodGatherer:
+                    PopUpManager.instance.CreatePopUp(transform.position, "Food gatherer");
+                    break;
+
+                case Professions.Miner:
+                    PopUpManager.instance.CreatePopUp(transform.position, "Miner");
+                    break;
+
+                case Professions.Unemployed:
+                default:
+                    PopUpManager.instance.CreatePopUp(transform.position, "Unemloyed");
+                    break;
+            }
+            
         } 
     }
 

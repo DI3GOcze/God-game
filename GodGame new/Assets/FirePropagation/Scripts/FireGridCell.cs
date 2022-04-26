@@ -151,6 +151,8 @@ public class FireGridCell : MonoBehaviour
         if(fireableObject == null)
             return;
 
+        fireableObject.OnDisabled += RemoveFireableObject;
+
         _objectsInCell.Add(fireableObject);   
 
         // If cell is already on fire when entering
@@ -163,6 +165,8 @@ public class FireGridCell : MonoBehaviour
         if(fireableObject == null)
             return;
         
+        fireableObject.OnDisabled -= RemoveFireableObject;
+
         _objectsInCell.Remove(fireableObject);
 
         // if cell is still on fire, when leaving

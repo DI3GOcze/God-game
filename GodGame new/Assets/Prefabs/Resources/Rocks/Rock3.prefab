@@ -215,6 +215,7 @@ Transform:
   - {fileID: 656353908641698584}
   - {fileID: 656353908641693498}
   - {fileID: 1989334167813486538}
+  - {fileID: 3100307452383464992}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -296,7 +297,7 @@ MonoBehaviour:
   depletedObject: {fileID: 0}
   resourceHealth: 10
   currentResourceHealth: 0
-  startingStone: 60
+  startingStone: 250
 --- !u!208 &-8991785155312704916
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -328,11 +329,9 @@ MonoBehaviour:
   resource: {fileID: 7935805344123523482}
   resourceType: 1
   playerResourceHarvestedAfterSeconds: 1
-  harvestingVibrationIntesity: 0.2
-  harvestedVibrationIntesity: 0.9
-  manaCostPerSecond: 20
   leftHandInteractor: {fileID: 0}
   rightHandInteractor: {fileID: 0}
+  popupSpawnPoint: {fileID: 6111963820092823565}
 --- !u!114 &9087214439936614284
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1020,3 +1019,33 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1 &6111963820092823565
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3100307452383464992}
+  m_Layer: 0
+  m_Name: Popup
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3100307452383464992
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6111963820092823565}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.604, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 656353908641703674}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

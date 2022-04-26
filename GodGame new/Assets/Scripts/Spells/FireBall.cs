@@ -11,7 +11,7 @@ public class FireBall : MonoBehaviour
 
     private void OnCollisionEnter(Collision other) {
         
-        if(stonePrefabs.Length > 0 && other.contactCount > 1)
+        if(stonePrefabs.Length > 0 && other.contactCount > 0)
         {
             var randomPrefab = stonePrefabs[Random.Range(0, stonePrefabs.Length)];
             Instantiate(randomPrefab, other.contacts[0].point, randomPrefab.transform.rotation);

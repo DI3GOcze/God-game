@@ -14,18 +14,27 @@ public abstract class GAgentBase : MonoBehaviour
 
     protected virtual void Update()
     {
+        CalculateReachedDestination();
+    }
+
+    private void CalculateReachedDestination()
+    {
+        ReachedDestination = false;
         // Can be disabled by VR interaction
         if(Agent.enabled && Agent.isOnNavMesh)
         {
             // If agent isnt calculating path
-            if (!Agent.pathPending && !ReachedDestination)
+            if (!Agent.pathPending && !ReachedDestination){
                 // If the agent is close enough to the destination
-                if (Agent.remainingDistance <= Agent.stoppingDistance)
+                if (Agent.remainingDistance <= Agent.stoppingDistance){
                     // If the agent has a path or osnt moving
                     // Sometimes if agent is to close to destination it wouldnt create path,
                     // thats why we test his velocity
-                    if (!Agent.hasPath || Agent.velocity.sqrMagnitude == 0f)
+                    if (!Agent.hasPath || Agent.velocity.sqrMagnitude == 0f){
                         ReachedDestination = true;
+                    }
+                }
+            }
                        
             if (ReachedDestination)
             {
@@ -35,23 +44,24 @@ public abstract class GAgentBase : MonoBehaviour
         }
     }
 
-    public void GoToDestination(Vector3 destination)
+    public bool GoToDestination(Vector3 destination)
     {
-        Agent.SetDestination(destination);
+        bool retVal = Agent.SetDestination(destination);
+        CalculateReachedDestination();
         Agent.updateRotation = true;
         Agent.isStopped = false;
-        ReachedDestination = false;
+        return retVal;
     }
 
-    public void GoToDestination(GameObject destinationObject)
+    public bool GoToDestination(GameObject destinationObject)
     {
         Collider collider = destinationObject.GetComponentInChildren<Collider>();
         if (collider == null)
-            GoToDestination(destinationObject.transform.position);
+            return GoToDestination(destinationObject.transform.position);
 
         // Closest point on destination object
         Vector3 closestPoint = collider.ClosestPointOnBounds(gameObject.transform.position);
-        GoToDestination(closestPoint);
+        return GoToDestination(closestPoint);
     }
 
     public void Die()

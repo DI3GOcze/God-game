@@ -270,6 +270,36 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!1 &2504470844157831064
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5976254460398650333}
+  m_Layer: 0
+  m_Name: Popup
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5976254460398650333
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2504470844157831064}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 2.021, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 7232550335108585184}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6288127994188588683
 GameObject:
   m_ObjectHideFlags: 0
@@ -758,6 +788,7 @@ Transform:
   - {fileID: 7232550335108500162}
   - {fileID: 7232550335108557826}
   - {fileID: 700971176975504079}
+  - {fileID: 5976254460398650333}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -839,7 +870,7 @@ MonoBehaviour:
   depletedObject: {fileID: 0}
   resourceHealth: 10
   currentResourceHealth: 0
-  startingStone: 60
+  startingStone: 350
 --- !u!208 &7665774976486251992
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -871,11 +902,9 @@ MonoBehaviour:
   resource: {fileID: 8081519779263154619}
   resourceType: 1
   playerResourceHarvestedAfterSeconds: 1
-  harvestingVibrationIntesity: 0.2
-  harvestedVibrationIntesity: 0.9
-  manaCostPerSecond: 20
   leftHandInteractor: {fileID: 0}
   rightHandInteractor: {fileID: 0}
+  popupSpawnPoint: {fileID: 2504470844157831064}
 --- !u!114 &4468655190043617759
 MonoBehaviour:
   m_ObjectHideFlags: 0

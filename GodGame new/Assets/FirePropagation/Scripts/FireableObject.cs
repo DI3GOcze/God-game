@@ -11,6 +11,8 @@ public abstract class FireableObject : MonoBehaviour
     [SerializeField] float temperatureDecreaseRate = 20f;
     [SerializeField] float temperatureIncreaseRate = 40f;
     [SerializeField] float _temperature;
+    public delegate void ObjectDiabledAction(FireableObject fireableObject);
+    public event ObjectDiabledAction OnDisabled;
     /// <summary>
     /// Damage taken per second when on fire
     /// </summary>
@@ -112,5 +114,13 @@ public abstract class FireableObject : MonoBehaviour
             IncreaseTemperature(temperatureIncreaseRate * Time.deltaTime);
         else
             DecreaseTemperature(temperatureDecreaseRate * Time.deltaTime);
+    }
+
+    private void OnDisable() {
+        OnDisabled?.Invoke(this);
+    }
+
+    private void OnDestroy() {
+        OnDisabled?.Invoke(this);
     }
 }

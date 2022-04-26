@@ -14,11 +14,8 @@ public class GoalEat : GGoalBase
 
     public override bool CanRun()
     {
-        if (Warehouse.warehouseInvetory.HasItem(ResourceTypes.FOOD))
-        {
-            if (Agent != null && Agent.GetType().IsSubclassOf(typeof(Person)) && ((Person)Agent).HungerNormalized > 0.5f)
-            return true;
-        }
+        if (Agent != null && Agent.GetType().IsSubclassOf(typeof(Person)) && ((Person)Agent).HungerNormalized > 0.5f)
+            return true;  
         
         return false;
     }

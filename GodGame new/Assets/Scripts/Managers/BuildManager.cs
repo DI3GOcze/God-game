@@ -14,6 +14,7 @@ public class BuildManager : MonoBehaviour
 
     private BuildingScriptableObject _selectedBuilding;
     private GameObject _buildingGhost;
+    public GameObject popupSpawnPoint;
 
     // Singleton
     private void Awake() {
@@ -57,8 +58,11 @@ public class BuildManager : MonoBehaviour
     }
 
     private void OnDisable() {
-        if (_buildingGhost != null)
+        if (_buildingGhost != null){
             Destroy(_buildingGhost.gameObject);
+            _buildingGhost = null;
+            _selectedBuilding = null;
+        }
     }
 
     public void ConstructBuilding()
@@ -94,6 +98,7 @@ public class BuildManager : MonoBehaviour
         {
             Destroy(_buildingGhost);
             _selectedBuilding = null;
+            PopUpManager.instance.CreatePopUp(popupSpawnPoint.transform.position, "Deselected");
             return;
         }
 
@@ -104,5 +109,6 @@ public class BuildManager : MonoBehaviour
 
         // Create ghost of new selected prefab
         _buildingGhost = Instantiate(_selectedBuilding.buildingGhost, Vector3.zero, _selectedBuilding.buildingGhost.transform.rotation);
+        PopUpManager.instance.CreatePopUp(popupSpawnPoint.transform.position, "Selected");
     }
 }

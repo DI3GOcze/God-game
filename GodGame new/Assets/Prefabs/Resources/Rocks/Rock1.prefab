@@ -272,6 +272,36 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!1 &5621515418668445800
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3331610584924555040}
+  m_Layer: 0
+  m_Name: Popup
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3331610584924555040
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5621515418668445800}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.79, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8122927757451511806}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7677836137559799156
 GameObject:
   m_ObjectHideFlags: 0
@@ -441,6 +471,7 @@ Transform:
   m_LocalScale: {x: 2.1213074, y: 2.1213074, z: 2.1213074}
   m_Children:
   - {fileID: 8122927757451528512}
+  - {fileID: 3331610584924555040}
   - {fileID: 9088592540063669363}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -523,7 +554,7 @@ MonoBehaviour:
   depletedObject: {fileID: 0}
   resourceHealth: 10
   currentResourceHealth: 0
-  startingStone: 60
+  startingStone: 150
 --- !u!208 &3817364273025251659
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -555,11 +586,9 @@ MonoBehaviour:
   resource: {fileID: 5471378774289917634}
   resourceType: 1
   playerResourceHarvestedAfterSeconds: 1
-  harvestingVibrationIntesity: 0.2
-  harvestedVibrationIntesity: 0.9
-  manaCostPerSecond: 20
   leftHandInteractor: {fileID: 0}
   rightHandInteractor: {fileID: 0}
+  popupSpawnPoint: {fileID: 5621515418668445800}
 --- !u!114 &6574738581898122516
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -784,7 +813,7 @@ RectTransform:
   - {fileID: 6141070216072971698}
   - {fileID: 2609118619960964135}
   m_Father: {fileID: 8122927757451511806}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}

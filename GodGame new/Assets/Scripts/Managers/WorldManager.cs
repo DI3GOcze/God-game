@@ -9,13 +9,10 @@ public class WorldManager : MonoBehaviour
     public int Stones;
     public int Warehouses;
     public float TimeScale = 1f;
-    public Button ArmagedonButton;
-    private Color ButtonBaseColor;
-    public Color ButtonActiveColor = Color.red;
+
     void Start()
     {
         LimitFPS();
-        ButtonBaseColor = ArmagedonButton.GetComponent<Image>().color;
     }
 
     void LimitFPS()
@@ -34,18 +31,12 @@ public class WorldManager : MonoBehaviour
 
     public void Armagedon()
     {
-        ArmagedonButton.GetComponent<Image>().color = ButtonActiveColor;
-        ArmagedonButton.enabled = false;
-
         World.Instance.AddStateToWorldState(WorldStates.YouAllGonaDie);
         Invoke("WeGood", 10);
     }
 
     public void WeGood()
     {
-        ArmagedonButton.GetComponent<Image>().color = ButtonBaseColor;
-        ArmagedonButton.enabled = true;
-
         World.Instance.RemoveStateFromWorldState(WorldStates.YouAllGonaDie);
     }
 }
