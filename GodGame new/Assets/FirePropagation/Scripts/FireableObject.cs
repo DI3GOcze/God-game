@@ -86,6 +86,9 @@ public abstract class FireableObject : MonoBehaviour
         Instantiate(_fireParticlePrefab, _fireModelSpawnPoint.transform.position, _fireParticlePrefab.transform.rotation, _fireModelSpawnPoint.transform);
     }
 
+    /// <summary>
+    /// Destroyes all objects in _fireModelSpawnPoint object
+    /// </summary>
     protected void DestroyFireModel()
     {
         foreach (Transform item in _fireModelSpawnPoint.transform)
@@ -94,6 +97,9 @@ public abstract class FireableObject : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Instantly sets the object on fire
+    /// </summary>
     public void IgniteObject()
     {
         _temperature = igniteTreshold;

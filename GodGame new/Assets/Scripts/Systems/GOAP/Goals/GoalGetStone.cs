@@ -11,7 +11,7 @@ public class GoalGetStone : GGoalBase
 
     public override bool CanRun()
     {
-        //if(World.Instance.timeOfDay == TimesOfDay.Afternoon && (IsActive || World.Instance.CountOfFreeResource<StoneResource>() > 0)) Too expensive
+        //if(World.Instance.timeOfDay == TimesOfDay.Afternoon && (IsActive || World.Instance.CountOfFreeResource<StoneResource>() > 0)) Too expensive for quest
         // If is already active or there is resource to be harvested
         if (World.Instance.timeOfDay == TimesOfDay.Afternoon)
             return true;

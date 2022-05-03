@@ -3,10 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// Changes dynamicaly color of slider based on his value
+/// </summary>
 public class SliderColorChange : MonoBehaviour
 {
-    public Slider Slider; //connected the slider
-    public Image SliderFill; //connected the Image Fill from the slider
+    public Slider Slider; 
+    public Image SliderFill;
     public Color LowValueColor = Color.green;
     public Color HighValueColor = Color.red;
     private void Update(){

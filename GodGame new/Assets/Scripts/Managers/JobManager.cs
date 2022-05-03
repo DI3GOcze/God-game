@@ -3,14 +3,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Finally wasnt used nor completed
+/// </summary>
 public class JobManager : MonoBehaviour
 {
     private static JobManager _instance;
-
     public static JobManager Instance { get { return _instance; } }
+    [Serializable] public class ProffesionsGrownListDictionary : UnitySerializedDictionary<Professions, List<Grown>> { }
+    [SerializeField] ProffesionsGrownListDictionary _agentsProfessions;
 
     private void Awake()
     {
+        // Singleton...
         if (_instance != null && _instance != this)
         {
             Destroy(this.gameObject);
@@ -20,10 +25,6 @@ public class JobManager : MonoBehaviour
             _instance = this;
         }
     }
-
-    
-    [Serializable] public class ProffesionsGrownListDictionary : UnitySerializedDictionary<Professions, List<Grown>> { }
-    [SerializeField] ProffesionsGrownListDictionary _agentsProfessions;
 
     // Start is called before the first frame update
     void Start()

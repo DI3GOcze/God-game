@@ -20,6 +20,11 @@ public abstract class DepletableResource : AgentInteractibleBase
     /// </summary>
     public DepletedResource depletedObject;
 
+    public float resourceHealth = 10;
+    // Health of one resource
+    // If health decreses to 0 one resource should be deleted
+    public float currentResourceHealth;
+
     protected override void Start() {
         base.Start();
         currentResourceHealth = resourceHealth;
@@ -44,13 +49,12 @@ public abstract class DepletableResource : AgentInteractibleBase
         return actualAmmount;
     }
 
-    public float resourceHealth = 10;
-    // Health of one resource
-    // If health decreses to 0 one resource should be deleted
-    public float currentResourceHealth;
-
-    // If object recieves fire damage, its resources should lower
-    // returns false if object has been depleted
+    
+    // 
+    /// <summary>
+    /// If object recieves fire damage, its resources should lower
+    /// </summary>
+    /// <param name="damage">amount of damage</param>
     public void GiveFireDamage(float damage)
     {
         if (isDepleted)
@@ -72,6 +76,9 @@ public abstract class DepletableResource : AgentInteractibleBase
      
     }
 
+    /// <summary>
+    /// Gets resource into depleted state
+    /// </summary>
     public void SetDepleted()
     {
         OnDepleted?.Invoke();
@@ -89,7 +96,9 @@ public abstract class DepletableResource : AgentInteractibleBase
         isDepleted = true;
     }
 
-
+    /// <summary>
+    /// Gets resource from depleted state into normal state
+    /// </summary>
     virtual public void ResetResource()
     {
         World.Instance.AddNewResourceInstance(this);

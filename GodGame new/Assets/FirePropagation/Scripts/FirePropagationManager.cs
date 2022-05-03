@@ -103,7 +103,7 @@ public class FirePropagationManager : MonoBehaviour
     }
 
     /// <summary>
-    /// 
+    /// Returns cells in Neumann neighbourhood
     /// </summary>
     /// <param name="x"></param>
     /// <param name="y"></param>
@@ -136,6 +136,9 @@ public class FirePropagationManager : MonoBehaviour
         else
             cells[3] = null;
 
+        ////////////////////////////////////////////////////////
+        // This piece of code can be used for Moor neighbourhood
+        //
         // // Top left cell
         // if(y + 1 < gridHeight && x - 1 >= 0)
         //     cells[4] = _grid[y + 1,x - 1];
@@ -163,6 +166,9 @@ public class FirePropagationManager : MonoBehaviour
         return cells;
     }
 
+    /// <summary>
+    /// Generates grid with this game object in center
+    /// </summary>
     void CreateFireGrid()
     {
         if(_grid != null)
@@ -181,6 +187,12 @@ public class FirePropagationManager : MonoBehaviour
         }  
     }
 
+
+    /// <summary>
+    /// Creates fire cell on given position
+    /// </summary>
+    /// <param name="position">Desired spawn position</param>
+    /// <returns>Created cell</returns>
     FireGridCell CreateCell(Vector3 position)
     {
         FireGridCell cell = Instantiate(_cellPrefab, position, _cellPrefab.transform.rotation, this.transform).GetComponent<FireGridCell>();
@@ -189,6 +201,13 @@ public class FirePropagationManager : MonoBehaviour
         return cell;
     }
 
+
+    /// <summary>
+    /// Calculates desired position of cell based on given cell indexes
+    /// </summary>
+    /// <param name="x">index of cell in grid column</param>
+    /// <param name="y">index of cell in grid row</param>
+    /// <returns>Desired position</returns>
     public Vector3 GetCellPosition(int x, int y)
     {
         Vector2 position2D = new Vector2(transform.position.x + cellSize * (x + .5f - gridWidth * .5f), transform.position.z + cellSize * (y + .5f - gridHeight * .5f));

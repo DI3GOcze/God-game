@@ -11,7 +11,7 @@ public class GoalGetFood : GGoalBase
 
     public override bool CanRun()
     {
-        // if(World.Instance.timeOfDay == TimesOfDay.Afternoon && (IsActive || World.Instance.CountOfFreeResource<BerriesResource>() > 0)) - Too expensive
+        // if(World.Instance.timeOfDay == TimesOfDay.Afternoon && (IsActive || World.Instance.CountOfFreeResource<BerriesResource>() > 0)) - Too expensive for quest
         // If is already active or there is resource to be harvested
         if (World.Instance.timeOfDay == TimesOfDay.Afternoon)
             return true;

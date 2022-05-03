@@ -44,6 +44,11 @@ public abstract class GAgentBase : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Sets destination point for NavAgent
+    /// </summary>
+    /// <param name="destinationObject">Desired destination</param>
+    /// <returns>True if destination was set successfuly</returns>
     public bool GoToDestination(Vector3 destination)
     {
         bool retVal = Agent.SetDestination(destination);
@@ -53,6 +58,12 @@ public abstract class GAgentBase : MonoBehaviour
         return retVal;
     }
 
+    /// <summary>
+    /// Sets destination object for NavAgent
+    /// The destination point is the closest point on collider of given gameobject
+    /// </summary>
+    /// <param name="destinationObject">Desired destination object</param>
+    /// <returns>True if destination was set successfuly</returns>
     public bool GoToDestination(GameObject destinationObject)
     {
         Collider collider = destinationObject.GetComponentInChildren<Collider>();
@@ -64,11 +75,19 @@ public abstract class GAgentBase : MonoBehaviour
         return GoToDestination(closestPoint);
     }
 
+    /// <summary>
+    /// Kills the Agent
+    /// </summary>
     public void Die()
     {
         Destroy(this.gameObject);
     }
 
+    /// <summary>
+    /// From given objects finds the closest one
+    /// </summary>
+    /// <param name="objects">objects for searching</param>
+    /// <returns>Closest object</returns>
     public T GetClosestObject<T>(T[] objects) where T : MonoBehaviour
     {
         T closestObject = null;
@@ -90,6 +109,9 @@ public abstract class GAgentBase : MonoBehaviour
         return closestObject;
     }
 
+    /// <summary>
+    /// Stops agent from moving
+    /// </summary>
     public void StopMovement()
     {
         if (Agent.isOnNavMesh)

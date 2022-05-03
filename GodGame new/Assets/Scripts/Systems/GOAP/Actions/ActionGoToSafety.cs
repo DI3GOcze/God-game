@@ -11,7 +11,6 @@ public class ActionGoToSafety : GActionBase
         return SupportedGoals;
     }
 
-    // This method is run before its first OnTick()
     public override void OnActivated(GGoalBase _linkedGoal)
     {
         base.OnActivated(_linkedGoal);

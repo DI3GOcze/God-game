@@ -4,6 +4,9 @@ using UnityEngine;
 using UnityEngine.XR;
 using UnityEngine.XR.Interaction.Toolkit;
 
+/// <summary>
+/// Implements player resrource harvesting with XR Ray Interactors
+/// </summary>
 public class PlayerHarvestingHandler : MonoBehaviour
 {
     public AgentInteractibleBase resource;
@@ -30,13 +33,18 @@ public class PlayerHarvestingHandler : MonoBehaviour
 
     void Update()
     {
+        // If player has enough mana 
         if(PlayerStatManager.instance.mana >= Time.deltaTime * manaCostPerSecond)
         {
             PlayerStatManager.instance.DecreseMana(Time.deltaTime * manaCostPerSecond);
             
+            // Haptic feedback
             leftHandInteractor.SendHapticImpulse(harvestingVibrationIntesity, 0.05f);
             rightHandInteractor.SendHapticImpulse(harvestingVibrationIntesity, 0.05f);
 
+            // Player harvests only integer amount of resource
+            // once _playerHarvestingProgress reaches playerResourceHarvestedAfterSeconds
+            // player gets one instance of resource
             _playerHarvestingProgress += Time.deltaTime;
             if(_playerHarvestingProgress >= playerResourceHarvestedAfterSeconds)
             {
@@ -45,6 +53,7 @@ public class PlayerHarvestingHandler : MonoBehaviour
                 _playerHarvestingProgress= 0f;
                 int amountHarvested = resource.GetResource(resourceType, 1);
 
+                // Creating popup text
                 string text = "";
                 if(resourceType == ResourceTypes.WOOD){
                     text = "+" + amountHarvested.ToString() + " wood";

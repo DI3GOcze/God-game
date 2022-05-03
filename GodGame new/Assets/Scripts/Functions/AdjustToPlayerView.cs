@@ -16,7 +16,7 @@ public class AdjustToPlayerView : MonoBehaviour
         // Align to player height
         transform.position = new Vector3(transform.position.x, _playerView.position.y, transform.position.z);
 
-        // 
+        // Rotate towards player
         transform.rotation = Quaternion.LookRotation(transform.position - _playerView.position);
     }
 }

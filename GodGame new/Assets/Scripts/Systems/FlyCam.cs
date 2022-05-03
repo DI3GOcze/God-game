@@ -12,6 +12,10 @@ public class FlyCam : MonoBehaviour {
     shift : Makes camera accelerate
     space : Moves camera on X and Z axis only.  So camera doesn't gain any height*/
      
+    /// <summary>
+    /// This was used at the beginning of development for flying in game scene
+    /// Isnt used in final product and is not work of Jakub Kryštůfek
+    /// </summary>
      
     public float mainSpeed = 50.0f; //regular speed
     public float shiftAdd = 250.0f; //multiplied by how long shift is held.  Basically running
@@ -27,6 +31,7 @@ public class FlyCam : MonoBehaviour {
     private void Start() {
         
     }
+
     void Update () {
         if(lockCamera)
         {

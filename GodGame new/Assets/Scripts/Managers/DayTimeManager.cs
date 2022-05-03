@@ -77,6 +77,7 @@ public class DayTimeManager : MonoBehaviour
         // Colors
         sun.color = sunColor.Evaluate(scaledTime);
 
+        // Gloabal lightning settings
         RenderSettings.ambientIntensity = lightIntesityMultiplier.Evaluate(scaledTime);
         RenderSettings.reflectionIntensity = reflectionIntesityMultiplier.Evaluate(scaledTime);
 

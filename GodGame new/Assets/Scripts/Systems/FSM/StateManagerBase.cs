@@ -12,7 +12,9 @@ public abstract class StateManagerBase : MonoBehaviour, IStateManager
     public StateBase currentState;
     protected TextMeshProUGUI StateText;
 
-    // Current state must be set before base.OnActivated()
+    /// <summary>
+    /// Is called when parent action has been activated
+    /// </summary>
     public virtual void OnActivated()
     {
         Agent = GetComponent<GAgentBase>();
@@ -21,17 +23,27 @@ public abstract class StateManagerBase : MonoBehaviour, IStateManager
         currentState.EnterState();
     }
 
+    /// <summary>
+    /// OnTick is called every frame if parent GOAP action is active
+    /// </summary>
     public virtual void OnTick()
     {
         currentState.UpdateState();
     }
 
+    /// <summary>
+    /// Is called if parent action is deactivated
+    /// </summary>
     public virtual void OnDeactivated()
     {
         currentState.ExitState();
         currentState = null;
     }
 
+    /// <summary>
+    /// Deactivates current state, and activates selected one
+    /// </summary>
+    /// <param name="nextState">Selected state</param>
     public virtual void SwitchState(StateBase nextState)
     {
         currentState.ExitState();
@@ -43,6 +55,7 @@ public abstract class StateManagerBase : MonoBehaviour, IStateManager
     // Initializes values for a new run of the same machine
     public virtual void ResetManager() { }
 
+    // Updates debug texts
     protected void UpdateStateText()
     {
         if (StateText != null)

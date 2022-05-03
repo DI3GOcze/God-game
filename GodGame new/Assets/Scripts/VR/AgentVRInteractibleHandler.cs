@@ -5,6 +5,9 @@ using UnityEngine.AI;
 using UnityEngine.XR;
 using UnityEngine.XR.Interaction.Toolkit;
 
+/// <summary>
+/// Implements VR interaction with agent 
+/// </summary>
 public class AgentVRInteractibleHandler : VRInteractionHandler
 {   
     [SerializeField] GPlanner _planner; 
@@ -25,6 +28,9 @@ public class AgentVRInteractibleHandler : VRInteractionHandler
         rightHandInteractor = GameObject.Find("RightHand Controller").GetComponent<XRRayInteractor>();
     }
 
+    /// <summary>
+    /// Is called when agent is grabbed with controllers
+    /// </summary>
     public override void OnSelectEntered()
     {
         if(coroutine != null) {
@@ -42,6 +48,9 @@ public class AgentVRInteractibleHandler : VRInteractionHandler
         EnableMenuButtonListener();
     }
 
+    /// <summary>
+    /// Enables listening for cotroller buttons
+    /// </summary>
     public void EnableMenuButtonListener()
     {
         var leftHandObjects = leftHandInteractor.interactablesSelected;
@@ -77,12 +86,18 @@ public class AgentVRInteractibleHandler : VRInteractionHandler
         }
     }
 
+    /// <summary>
+    /// Disables listening for cotroller buttons
+    /// </summary>
     public void DisableMenuButtonListener()
     {
         this.rightHandListener.enabled = false;
         this.leftHandListener.enabled = false;     
     }
 
+    /// <summary>
+    /// Is calles when agent is released from hand
+    /// </summary>
     public override void OnSelectExited()
     {
         if (_rigidBody != null) 
@@ -94,6 +109,9 @@ public class AgentVRInteractibleHandler : VRInteractionHandler
         DisableMenuButtonListener();
     }
 
+    /// <summary>
+    /// Returns agent to his normal state after he has been thrown
+    /// </summary>
     IEnumerator EnableAfterStacionary()
     {
         yield return new WaitForSeconds(0.5f);
@@ -107,6 +125,7 @@ public class AgentVRInteractibleHandler : VRInteractionHandler
         }   
 
 
+        // Retunr to normal autonomus state
         if (_rigidBody != null) 
             { _rigidBody.isKinematic = true; }
 
@@ -115,7 +134,5 @@ public class AgentVRInteractibleHandler : VRInteractionHandler
 
         if (_planner != null) 
             { _planner.enabled = true; }
-
- 
     }
 }

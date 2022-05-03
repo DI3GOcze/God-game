@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Toggles gameobject when player enteres or exits
+/// </summary>
 public class ToggleOnPlayer : MonoBehaviour
 {
     public GameObject ToggledObject; 

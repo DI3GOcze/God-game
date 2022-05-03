@@ -4,6 +4,10 @@ using UnityEngine;
 using UnityEngine.XR;
 using UnityEngine.XR.Interaction.Toolkit;
 
+/// <summary>
+/// Implementation of squezing villager to hard leads to killing him
+/// Isnt used in final product... wasnt fun feature
+/// </summary>
 public class HoldPressureHandler : MonoBehaviour
 {
     public XRRayInteractor leftHand;
@@ -28,10 +32,7 @@ public class HoldPressureHandler : MonoBehaviour
         var rightHandObjects = rightHand.interactablesSelected;
 
         float gripValue = 0f;
-
-        
-        
-        
+ 
         // Iterate throug all objects held by left hand
         if(leftHandObjects.Count > 0)
         {
@@ -41,6 +42,7 @@ public class HoldPressureHandler : MonoBehaviour
                 if(item.transform.gameObject == this.gameObject)
                 {
                     gripValue = GetGripValue(_leftController);
+                    // If squezing too hard give damage to held villager
                     if(gripValue >= 0.9f)
                     {
                         _grown.DecreseHealth(damageRate * Time.deltaTime * gripValue);
@@ -71,6 +73,11 @@ public class HoldPressureHandler : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Gets value of grip button
+    /// </summary>
+    /// <param name="controller">Desired controller (left or right)</param>
+    /// <returns>Value of button</returns>
     float GetGripValue(UnityEngine.XR.InputDevice controller)
     {
         if(!controller.isValid)
@@ -87,6 +94,10 @@ public class HoldPressureHandler : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Gets desired input controller based on device characteristic
+    /// </summary>
+    /// <param name="characteristics">Controller characteristics</param>
     void GetController(InputDeviceCharacteristics characteristics)
     {
         // Set device

@@ -13,7 +13,6 @@ public class Grown : Person
     [SerializeField] private GPlanner _planner;
     
     public Professions profession = Professions.Unemployed;
-    // ..
 
     protected override void Start() {
         base.Start();
@@ -48,6 +47,8 @@ public class Grown : Person
             this.profession = profession;
             _planner.UpdateGoalsAndActions();
             
+            
+            // Create popup message based on selected profession
             switch(profession)
             {
                 case Professions.Woodcuter:
@@ -67,10 +68,13 @@ public class Grown : Person
                     PopUpManager.instance.CreatePopUp(transform.position, "Unemloyed");
                     break;
             }
-            
         } 
     }
 
+    /// <summary>
+    /// Decreses Grown health
+    /// </summary>
+    /// <param name="amount">Decresed amount</param>
     public void DecreseHealth(float amount)
     {
         health -= amount;
@@ -78,6 +82,10 @@ public class Grown : Person
             Destroy(gameObject);
     }
 
+    /// <summary>
+    /// Adds all dependecies for given profession to gameObject
+    /// </summary>
+    /// <param name="profession">Selected profession</param>
     private void AddProfession(Professions profession)
     {
         switch(profession)
@@ -103,6 +111,10 @@ public class Grown : Person
         }
     }
 
+    /// <summary>
+    /// Removes all dependecies for given profession from gameObject
+    /// </summary>
+    /// <param name="profession">Selected profession</param>
     private void RemoveProfession()
     {
         List<GGoalBase> goalsToDestroy = new List<GGoalBase>();

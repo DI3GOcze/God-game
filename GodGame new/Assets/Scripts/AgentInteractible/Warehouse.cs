@@ -9,11 +9,12 @@ public class Warehouse : BuildingBase
     public static ResourceTypesInventory warehouseInvetory {
         get 
         {
+            // Initializes united inventory
             if(_warehouseInvetory == null){
                 _warehouseInvetory = new ResourceTypesInventory();
-                warehouseInvetory.AddAmmountOrAddNewItem(ResourceTypes.WOOD, 500);
-                warehouseInvetory.AddAmmountOrAddNewItem(ResourceTypes.STONE, 500);
-                warehouseInvetory.AddAmmountOrAddNewItem(ResourceTypes.FOOD, 30);
+                warehouseInvetory.AddAmmountOrAddNewItem(ResourceTypes.WOOD, 1500);
+                warehouseInvetory.AddAmmountOrAddNewItem(ResourceTypes.STONE, 800);
+                warehouseInvetory.AddAmmountOrAddNewItem(ResourceTypes.FOOD, 1800);
             }
             
             return _warehouseInvetory;

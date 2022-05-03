@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Randly sets on firce one building in given time
+/// </summary>
 public class RandomFireManager : MonoBehaviour
 {
     public float minTime;
@@ -21,10 +24,14 @@ public class RandomFireManager : MonoBehaviour
         }
     } 
 
+    /// <summary>
+    /// Ignites random building
+    /// </summary>
     void IgniteRandomObject()
     {
         var objects = FindObjectsOfType<FireableObjectBuilding>();
         
+        // if no buildings were found
         if (objects.Length == 0)
             return;
         

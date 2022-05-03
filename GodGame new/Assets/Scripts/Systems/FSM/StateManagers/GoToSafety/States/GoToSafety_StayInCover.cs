@@ -11,4 +11,6 @@ public class GoToSafety_StayInCover : StateBase
         this.Manager = Manager;
     }
 
+    // Infinite state, just waiting for goal change
+
 }

@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
+/// <summary>
+/// Manages life time of popup message
+/// </summary>
 public class PopUpHandler : MonoBehaviour
 {
     public float delay = 0.1f;

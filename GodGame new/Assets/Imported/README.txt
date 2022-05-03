@@ -1,1 +1,0 @@
-Všechny soubory v této složce jsou importované assety, které byly využity pro vývoj bakalářské práce a nejsou v žádném případě autorským dílem Jakuba Kruštůfka.

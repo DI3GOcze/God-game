@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
+
 [System.Serializable]
 public struct OnActionPair {
     public InputAction action;
@@ -47,8 +48,10 @@ public struct OnActionPair {
         action.Disable();
     }
 }
+
 /// <summary>
-/// Checks for button input on an input action
+/// Implmentation of listener to actions. Listeners and action 
+/// can be set in Inspector
 /// </summary>
 public class OnButtonPress : MonoBehaviour
 {

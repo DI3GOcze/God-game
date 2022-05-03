@@ -4,6 +4,9 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.XR;
 
+/// <summary>
+/// Implements animation of VR hands. In Unity is used animator and hand models from Oculus https://developer.oculus.com/documentation/unity/unity-sf-customhands/
+/// </summary>
 [RequireComponent(typeof(Animator))]
 public class AnimateHand : MonoBehaviour
 {

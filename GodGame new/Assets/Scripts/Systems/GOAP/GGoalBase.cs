@@ -28,6 +28,10 @@ public abstract class GGoalBase : MonoBehaviour, IGoal
         OnTickGoal();
     }
 
+    /// <summary>
+    /// Returns current priority of goal
+    /// </summary>
+    /// <returns>Priority of goal</returns>
     public virtual float CalculatePriority()
     {
         // Priorities based on priority:
@@ -41,22 +45,36 @@ public abstract class GGoalBase : MonoBehaviour, IGoal
         return -1f;
     }
 
+    /// <summary>
+    /// Determines if goal can be activated
+    /// </summary>
+    /// <returns>True if can be activated</returns>
     public virtual bool CanRun()
     {
         return false;
     }
 
+    /// <summary>
+    /// Is called every frame if goal is active
+    /// </summary>
     public virtual void OnTickGoal()
     {
         // Update internal state (for CalculatePriorityPriority, CanRun etc.)
     }
 
+    /// <summary>
+    /// Is called once goal has been activated
+    /// </summary>
+    /// <param name="_linkedAction">Action that has been activated</param>
     public virtual void OnActivated(GActionBase _linkedAction)
     {
         IsActive = true;
         LinkedAction = _linkedAction;
     }
 
+    /// <summary>
+    /// Is called once goal has been deactivated
+    /// </summary>
     public virtual void OnDeactivated()
     {
         IsActive = false;

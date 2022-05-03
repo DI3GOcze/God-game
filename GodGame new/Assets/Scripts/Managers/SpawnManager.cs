@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Swawns given amount of villagers at the begining of scene
+/// </summary>
 public class SpawnManager : MonoBehaviour
 {
     [SerializeField] int numberOfWoodCuters = 10;
@@ -45,6 +48,13 @@ public class SpawnManager : MonoBehaviour
         yield return null;
     }
 
+    /// <summary>
+    /// Randomly spreads villagers in given area
+    /// Adjusts height to terrain height
+    /// </summary>
+    /// <param name="x">maximum x range</param>
+    /// <param name="z">maximum z range/param>
+    /// <returns>Random position on terrain</returns>
     Vector3 GenerateRandomOffset(float x, float z)
     {
         // Doesnt work with height higher than 1000

@@ -9,13 +9,19 @@ public class Person : GAgentBase
     public float maxHunger = 100f;
     public float HungerIncreasePerSecond = 1f;
     [SerializeField]
-    /// <summary>0 = not hungry, maxHunger => starving</summary>
+    /// <summary>
+    /// 0 = not hungry, maxHunger => starving
+    /// </summary>
 
     protected float hunger = 0;
-    /// <summary>Value from 0 - 1 (0 => not hungry, 1 => hungry)</summary>
+    /// <summary>
+    /// Value from 0 - 1 (0 => not hungry, 1 => hungry)
+    /// </summary>
     public float HungerNormalized => Mathf.Clamp(hunger / maxHunger, 0, 1);
-    // ...
 
+    /// <summary>
+    /// Makes Person not hungry
+    /// </summary>
     public void ClearHunger()
     {
         hunger = 0f;
@@ -27,6 +33,9 @@ public class Person : GAgentBase
         InvokeRepeating("IncreseHunger", 0f, 1f);
     }
 
+    /// <summary>
+    /// Increases Persons hunger over time
+    /// </summary>
     protected void IncreseHunger()
     {
         // If person starves, he dies

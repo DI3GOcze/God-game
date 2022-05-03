@@ -1,0 +1,13 @@
+Všechny soubory v této složce jsou importované assety, které byly využity pro vývoj bakalářské práce a nejsou autorským dílem Jakuba Kruštůfka.
+
+Kromě balíčků ve standatním Unity registru přikládám seznam dalších použitých balíčků:
+Polybrush - https://docs.unity3d.com/Packages/com.unity.polybrush@1.0/manual/index.html
+Tool Set - PolyPack - https://assetstore.unity.com/packages/3d/props/tools/tool-set-polypack-207678
+RPG Poly Pack - https://assetstore.unity.com/packages/3d/environments/landscapes/rpg-poly-pack-lite-148410
+Low Poly Modular Terrain Pack - https://assetstore.unity.com/packages/3d/environments/low-poly-modular-terrain-pack-91558
+Low Poly Rocks Pack - https://assetstore.unity.com/packages/3d/environments/low-poly-rocks-pack-70164
+Sci-Fi Arsenal - https://assetstore.unity.com/packages/vfx/particles/sci-fi-arsenal-60519
+POLYGON Farm - https://assetstore.unity.com/packages/3d/environments/industrial/polygon-farm-low-poly-3d-art-by-synty-146192
+Low-Poly Simple Nature Pack - https://assetstore.unity.com/packages/3d/environments/landscapes/low-poly-simple-nature-pack-162153
+Oculus Hands - https://developer.oculus.com/documentation/unity/unity-sf-customhands/
+QuickOutline - https://assetstore.unity.com/packages/tools/particles-effects/quick-outline-115488

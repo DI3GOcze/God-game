@@ -35,6 +35,7 @@ public class GetResource_DeliverResource : StateBase
     public override void UpdateState()
     {
         base.UpdateState();
+        // If delivery target wasnt set bring the resource to the player
         if(DeliverTarget == null)
         {
             _reachedPlayer = !Manager.Agent.GoToDestination(_player.gameObject.transform.position);           

@@ -8,7 +8,7 @@ public class Canteen : BuildingBase
     protected override void Start() {
         base.Start();
 
-        // Prirazeni spolecneho uloziste pro jidelny
+        // Canteen uses united inventory
         Resources = Warehouse.warehouseInvetory;
     }
     protected override void Awake()

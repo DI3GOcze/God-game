@@ -4,9 +4,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 
+/// <summary>
+/// World is used primary for keeping references to all types of objects
+/// Thanks to this caching of references, searching for objects of type in scene is a lot faster
+/// </summary>
 public sealed class World {
-
-    // Our GWorld instance
     private static readonly World _instance = new World();
     public List<Warehouse> warehouses { get; private set; } = new List<Warehouse>();
     public List<Canteen> canteens { get; private set; } = new List<Canteen>();
@@ -29,6 +31,11 @@ public sealed class World {
         get { return _instance; }
     }
 
+    /// <summary>
+    /// Returns count of resources with free spots for agents
+    /// </summary>
+    /// <typeparam name="T">Type of desired resource</typeparam>
+    /// <returns>Amount of resources with free spots</returns>
     public int CountOfFreeResource<T>() where T : AgentInteractibleBase
     {
         if(typeof(T).Equals(typeof(Warehouse)))
@@ -45,6 +52,11 @@ public sealed class World {
             return 0;  
     }
 
+    /// <summary>
+    /// Returns all resources that have free spots of type T
+    /// </summary>
+    /// <typeparam name="T">Type of desired resource</typeparam>
+    /// <returns>List of free resources</returns>
     public List<T> GetFreeResource<T>() where T : AgentInteractibleBase
     {
         if(typeof(T).Equals(typeof(Warehouse)))
@@ -63,7 +75,11 @@ public sealed class World {
             return new List<T>();  
     }
 
-    // Adds new instance of resource to inventory
+    
+    /// <summary>
+    /// Adds new instance of resource to inventory
+    /// </summary>
+    /// <param name="instance">Added resource</param>
     public void AddNewResourceInstance(AgentInteractibleBase instance)
     {
         if(instance is TreeResource)
@@ -80,6 +96,10 @@ public sealed class World {
             tents.Add((Tent)instance);
     }
 
+    /// <summary>
+    /// Removes given resource from references
+    /// </summary>
+    /// <param name="instance">Desired resource</param>
     public void RemoveResourceInstance(AgentInteractibleBase instance){
         if(instance is TreeResource)
             trees.Remove((TreeResource)instance);
@@ -95,20 +115,38 @@ public sealed class World {
             tents.Remove((Tent)instance);
     }
 
+    /// <summary>
+    /// Changes valus of day time
+    /// </summary>
+    /// <param name="timeOfDay">Desired time of day</param>
     public void ChangeTimeOfDay(TimesOfDay timeOfDay)
     {
         this.timeOfDay = timeOfDay;
     }
 
+    /// <summary>
+    /// Adds world state
+    /// </summary>
+    /// <param name="worldState">Desired world state</param>
     public void AddStateToWorldState(WorldStates worldState)
     {
         this.worldState.Add(worldState);
     }
 
+    /// <summary>
+    /// Returns if given worldstate if free
+    /// </summary>
+    /// <param name="worldState">Asked world state</param>
+    /// <returns>True if world state is set</returns>
     public bool IsWorldStateSet(WorldStates worldState)
     {
         return this.worldState.Contains(worldState);
     }
+
+    /// <summary>
+    /// Removes world state
+    /// </summary>
+    /// <param name="worldState">Desired world state</param>
     public void RemoveStateFromWorldState(WorldStates worldState)
     {
         this.worldState.Remove(worldState);

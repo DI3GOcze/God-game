@@ -19,9 +19,7 @@ public class UpdateText : MonoBehaviour
     private void Update() {
         
         string woodNum = inventory.ItemAmount(ResourceTypes.WOOD).ToString();
-
         string stoneNum = inventory.ItemAmount(ResourceTypes.STONE).ToString();
-
         string foodNum = inventory.ItemAmount(ResourceTypes.FOOD).ToString();
         
         if(wood != null)

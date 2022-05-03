@@ -98,6 +98,10 @@ public class GPlanner : MonoBehaviour
             ActiveAction.OnTick();
 
     }
+
+    /// <summary>
+    /// Updates list of current actions and Goals that Planner works with
+    /// </summary>
     public void UpdateGoalsAndActions()
     {
         Goals = new List<GGoalBase>(GetComponents<GGoalBase>());

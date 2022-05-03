@@ -27,6 +27,10 @@ public class PlayerStatManager : MonoBehaviour
         mana = maxMana;
     }
 
+    /// <summary>
+    /// Increses players mana by amount  
+    /// </summary>
+    /// <param name="amount">Incese mana by amount</param>
     public void IncreaseMana(float amount)
     {
         mana += amount;
@@ -35,6 +39,10 @@ public class PlayerStatManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Decreses players mana by amount  
+    /// </summary>
+    /// <param name="amount">Decrese mana by amount</param>
     public void DecreseMana(float amount)
     {
         mana -= amount;
@@ -46,8 +54,10 @@ public class PlayerStatManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Player regenerates mana with time
         IncreaseMana(Time.deltaTime * manaRegenerationRate);        
-
+    
+        // Update player GUI slider
         if(slider.gameObject.activeInHierarchy) {
             slider.value = mana / maxMana;
         }

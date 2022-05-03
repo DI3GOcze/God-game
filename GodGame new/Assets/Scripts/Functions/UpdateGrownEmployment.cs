@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
+/// <summary>
+/// Changes profession text in Grown GUI
+/// </summary>
 public class UpdateGrownEmployment : MonoBehaviour
 {
     public TextMeshProUGUI ProfessionText;

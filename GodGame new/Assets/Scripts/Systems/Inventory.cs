@@ -16,10 +16,14 @@ public class Item<T> {
     }
 }
 
-// Invetory of items that have ammount >= 0
+/// <summary>
+/// Inventory that can store amounts of items of amount >= 0 (cant store negative amounts)
+/// </summary>
+/// <typeparam name="T">Type of stored item</typeparam>
 [System.Serializable]
 public class Inventory<T>
 {
+    // Only to show amounts in Inpector
     [SerializeField] List<Item<T>> inspetorItems = new List<Item<T>>();
     public Inventory()
     {   
@@ -29,6 +33,11 @@ public class Inventory<T>
     [Serializable] public class InventoryDictionary : UnitySerializedDictionary<T, int> {}
     public InventoryDictionary Items;
 
+    /// <summary>
+    /// Returns true if inventory contains given item (even 0 amount)
+    /// </summary>
+    /// <param name="item"></param>
+    /// <returns></returns>
     public bool HasItem(T item)
     {
         if(Items.ContainsKey(item))
@@ -37,8 +46,13 @@ public class Inventory<T>
             return false;
     }
 
-    // Adds item to inventory
-    // If item already exists, it overrides the value
+    
+    /// <summary>
+    /// Adds item to inventory
+    /// If item already exists, it overrides the value
+    /// </summary>
+    /// <param name="item">Stored item</param>
+    /// <param name="ammount">Amount of item</param>
     public void AddNewItem(T item, int ammount)
     {
         if(ammount < 0)
@@ -52,7 +66,12 @@ public class Inventory<T>
         UpdateInspectorData();
     }  
 
-    // If item is in inventory, adds ammount to item
+    
+    /// <summary>
+    /// If item is in inventory, adds ammount to item
+    /// </summary>
+    /// <param name="item">Desired item</param>
+    /// <param name="ammount">Amount of item</param>
     public void AddAmmountOfItem(T item, int ammount)
     {
         if(ammount < 1)
@@ -64,8 +83,12 @@ public class Inventory<T>
         UpdateInspectorData();
     }    
 
-    // Adds ammount to item
-    // If item isnt in inventory it is added with ammount
+    /// <summary>
+    /// Adds ammount to item
+    /// If item isnt in inventory it is added with ammount
+    /// </summary>
+    /// <param name="item">Desired item</param>
+    /// <param name="ammount">Amount of item</param>
     public void AddAmmountOrAddNewItem(T item, int ammount)
     {
         if(ammount < 0)
@@ -77,8 +100,14 @@ public class Inventory<T>
             Items.Add(item, ammount);
     }
 
-    // Seizes ammount of item from Inventory
-    // If there is not enough left, seizes what is left 
+    
+    /// <summary>
+    /// Seizes ammount of item from Inventory
+    /// If there is not enough left, seizes what is left 
+    /// </summary>
+    /// <param name="item">Desired item</param>
+    /// <param name="ammount">Amount of item</param>
+    /// <returns>Actual seized amount</returns>
     public int SeizeItem(T item, int ammount)
     {
         if(ammount < 1)
@@ -106,6 +135,11 @@ public class Inventory<T>
         return 0;
     }
 
+    /// <summary>
+    /// Returns amount of stored item
+    /// </summary>
+    /// <param name="item">Desired item</param>
+    /// <returns>Amount of given item in inventory </returns>
     public int ItemAmount(T item) 
     {
         if(HasItem(item))
@@ -116,8 +150,14 @@ public class Inventory<T>
         return 0;
     }
 
-    // Seizes ammount of item from Inventory
-    // If there is nothing left, seizes what is left and deletes item
+    
+    /// <summary>
+    /// Seizes ammount of item from Inventory
+    /// If there is nothing left, seizes what is left and deletes item
+    /// </summary>
+    /// <param name="item">Desired item</param>
+    /// <param name="ammount">Amount of item</param>
+    /// <returns>Actual seized amount</returns>
     public int SeizeAndDeleteItemOnEmpty(T item, int ammount)
     {
         if(ammount < 1)
@@ -130,19 +170,30 @@ public class Inventory<T>
         return seized;
     }
 
-    // Removes item from inventory
+    
+    /// <summary>
+    /// Removes item from inventory
+    /// </summary>
+    /// <param name="deleteThis">Desired item for deletion</param>
     public void RemoveItem(T deleteThis)
     {
         if(Items.ContainsKey(deleteThis)) 
             Items.Remove(deleteThis);
     }
 
-    // Returns true if Inventory is empty
+    
+    /// <summary>
+    /// Returns true if inventory isnt empty
+    /// </summary>
+    /// <returns>true if Inventory is empty</returns>
     public bool IsEmpty()
     {
         return Items.Count < 1;
     }
 
+    /// <summary>
+    /// Updating data for inspector debugging purpouses
+    /// </summary>
     void UpdateInspectorData()
     {
         List<Item<T>> tmp = new List<Item<T>>();

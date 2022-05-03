@@ -25,9 +25,13 @@ public class Eat_GoToCanteen : StateBase
         
         if(Manager.targetFoodSource == null)
         {
-            // Find closest canteen
-            AgentInteractibleBase[] freeCanteens = Manager.GetCanteens();     
-            Manager.targetFoodSource = Manager.Agent.GetClosestObject<AgentInteractibleBase>(freeCanteens);
+            // If there is any food in storage
+            if (Warehouse.warehouseInvetory.HasItem(ResourceTypes.FOOD))
+            {
+                // Find closest canteen
+                AgentInteractibleBase[] freeCanteens = Manager.GetCanteens();     
+                Manager.targetFoodSource = Manager.Agent.GetClosestObject<AgentInteractibleBase>(freeCanteens);
+            }
             
             // If no canteen was found, find closest food source
             if(Manager.targetFoodSource == null)

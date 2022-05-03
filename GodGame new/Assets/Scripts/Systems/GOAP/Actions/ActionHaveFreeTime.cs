@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
+/// <summary>
+/// Doesnt implement behavior with Finite State Machine
+/// Ispired by solution online https://forum.unity.com/threads/solved-random-wander-ai-using-navmesh.327950/
+/// </summary>
 public class ActionHaveFreeTime : GActionBase
 {
     List<System.Type> _supportedGoals = new List<System.Type>{typeof(GoalHaveFreeTime)};
@@ -30,7 +34,10 @@ public class ActionHaveFreeTime : GActionBase
     {
         base.OnTick();
 
+        // if agent isnt wandering give him new destination
         if (!_isOnTrip || agent.ReachedDestination) {
+            
+            // timer for maximum one trip time 
             if(_maxWanderingTimer != null){
                 StopCoroutine(_maxWanderingTimer);
             }
@@ -51,6 +58,10 @@ public class ActionHaveFreeTime : GActionBase
         }
     }
 
+    /// <summary>
+    // Finds random position on navMesh in wandering zone
+    /// </summary>
+    /// <returns>Random position on navmesh in wandering zone</returns>
     public Vector3 RandomPointInWaderingZone() {
         Vector2 randomPointInRadius = Random.insideUnitCircle * wanderFromOriginRadius;
         Vector3 pointInWanderingZone = new Vector3(randomPointInRadius.x, 0, randomPointInRadius.y) + _wanderingOrigin;
@@ -62,6 +73,7 @@ public class ActionHaveFreeTime : GActionBase
         return Vector3.zero; 
     }
 
+    // 
     IEnumerator MaxWanderingTimer()
     {
         yield return new WaitForSeconds(maxOneTripTime);

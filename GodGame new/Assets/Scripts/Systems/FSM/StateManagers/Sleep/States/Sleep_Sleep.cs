@@ -31,6 +31,9 @@ public class Sleep_Sleep : StateBase
             Manager.targetTent.ReleaseSpot(Manager.Agent.gameObject);
     }
 
+    /// <summary>
+    /// Disables agent renderer, colliders and driving components
+    /// </summary>
     private void DisableAgent()
     {
         Manager.Agent.GetComponent<Rigidbody>().detectCollisions = false;
@@ -47,6 +50,9 @@ public class Sleep_Sleep : StateBase
         }
     }
 
+    /// <summary>
+    /// Enables agent renderer, colliders and driving components
+    /// </summary>
     private void EnableAgent()
     {
         Manager.Agent.GetComponent<Rigidbody>().detectCollisions = true;
